@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 
 import '../ai/audio.dart';
 import '../ai/brain.dart';
+import '../ai/engines.dart';
 import '../ai/model_files.dart';
 import '../ai/speech.dart';
 import '../app.dart';
@@ -70,6 +71,8 @@ class _SetupScreenState extends State<SetupScreen> {
       _set('Персонажи просыпаются…', null);
       services.audio = await Audio.create();
       services.speech = await Speech.start(files);
+      services.ears = WhisperEars(services.audio, services.speech);
+      services.mouth = PiperMouth(services.audio, services.speech);
       services.brain = await Brain.load();
       if (const bool.fromEnvironment('SELFTEST')) await runSelfTest();
 

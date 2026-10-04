@@ -14,20 +14,25 @@ Built for the [**DEV Hacktoberfest Weekend Challenge 2026: Build for a Friend**]
 
 ## How it plays
 
-Three shops, three characters, each a mission with five small goals written in Russian:
+Six places in the barrio, each with its own character:
 
-| Shop | Character | The child has to… |
+| Place | Character | For example, the child has to… |
 |---|---|---|
-| La panadería | Doña Rosa | greet her, ask for three medialunas, add an alfajor, ask the price, say goodbye |
-| El kiosco | Tito | ask for figuritas, buy candy, ask the price… |
-| La heladería | Mili | ask which flavors there are, pick a cone or a cup, choose a flavor… |
+| La panadería | Doña Rosa | ask for three medialunas, add an alfajor, ask the price |
+| El kiosco | Tito | ask for figuritas, buy candy |
+| La heladería | Mili | ask which flavors there are, pick a cone, choose a flavor |
+| La plaza | Juli | introduce yourself, ask to join the football game, say *¡Yo atajo!* |
+| El colectivo | Don Héctor | ask whether the bus goes to the zoo, pay with the SUBE card, ask where to get off |
+| La verdulería | Marta | buy a kilo of apples, tomatoes for a salad, a sweet watermelon |
+
+**Every visit is a little different.** Each place has three variants with other quantities, other items and small twists ("the chocolate ran out today", "the figuritas arrive tomorrow", "this bus doesn't go to the plaza"). A new visit never repeats the last one.
 
 1. The child taps the microphone and **speaks Spanish**.
 2. **Whisper** writes down what they said, and the goals tick off as they're reached.
 3. **Gemma** answers in character, in Rioplatense Spanish with *voseo*.
 4. **Piper** says the answer out loud in an Argentine voice.
 
-When the child gets stuck, 💡 shows a ready phrase with its Russian translation and can say it aloud. Any character line can be translated (RU) or replayed (🔊). No hints gives ★★★, and stars unlock stickers for an album.
+When the child gets stuck, 💡 shows a ready phrase with its Russian translation and can say it aloud. On the first mission, **Copo the Samoyed** walks new players through the goals, the microphone and the hints. If a child goes quiet, Copo nudges them and the 💡 button pulses. No hints gives ★★★, and stars unlock 21 stickers for an album.
 
 ## Everything runs on the phone
 
@@ -47,7 +52,9 @@ Everything that decides whether a child succeeded is deterministic code in [`lib
 
 - goals are keyword checks on the transcript, accent-insensitive and tolerant of small misspellings ("medielunas" still counts)
 - stars, hints and stickers are plain rules
-- all of it is covered by `flutter test`
+- all of it is covered by `flutter test` (every hint in every variant must pass its own goal)
+
+When the keywords miss (the child said it right but Whisper misheard a word or a number), Gemma gets a yes/no question about the next goals, running while the reply is being voiced. A recognition error no longer blocks the game.
 
 Small models are bad at arithmetic, so the characters name prices per item and never add up a total.
 
@@ -87,10 +94,10 @@ lib/
 
 ## What testing with the kids taught us (and what's next)
 
-- **More places.** They finished all three missions in about 10 minutes and asked for more. Next: the colectivo, the plaza, the doctor.
-- **Onboarding.** Nobody discovered the 💡 hint button. After the first phrase a child didn't know what to say, and left and re-entered the shop to start over. Next: Copo walks new players through the first shop and points out the hints, and the shopkeeper nudges a quiet child.
-- **Speech recognition errors must never block the game.** One goal didn't tick although the child said it correctly. Next: show more clearly what the app heard, and add an "I said it" button.
-- **A little variety on every visit:** a different quantity, a different item, a shop that has run out of something.
+- ✅ **More places.** They finished all three missions in about 10 minutes and asked for more. Added: the plaza (meet kids and play football), the colectivo and the verdulería.
+- ✅ **Onboarding.** Nobody discovered the 💡 hint button, and a child who didn't know what to say left and re-entered the shop to start over. Added: Copo's first-mission walkthrough and nudges when a child goes quiet.
+- ✅ **Speech recognition errors must never block the game.** One goal didn't tick although the child said it correctly. Added: Gemma double-checks goals the keywords missed.
+- ✅ **A little variety on every visit.** Added: three variants per place.
 - **More natural voices.** Piper is fast and free, but it doesn't sound like a real porteña.
 
 ## Credits and licenses

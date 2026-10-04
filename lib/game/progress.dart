@@ -6,11 +6,18 @@ import 'package:shared_preferences/shared_preferences.dart';
 import 'missions.dart';
 
 class Player {
-  Player({required this.name, Map<String, int>? stars, Set<String>? stickers})
-    : stars = stars ?? {},
-      stickers = stickers ?? {};
+  Player({
+    required this.name,
+    Map<String, int>? stars,
+    Set<String>? stickers,
+    this.onboarded = false,
+  }) : stars = stars ?? {},
+       stickers = stickers ?? {};
 
   String name;
+
+  /// Has seen Copo's walkthrough of the mission screen.
+  bool onboarded;
 
   /// Best stars per mission id (1..3).
   final Map<String, int> stars;
@@ -22,12 +29,14 @@ class Player {
     'name': name,
     'stars': stars,
     'stickers': stickers.toList(),
+    'onboarded': onboarded,
   };
 
   factory Player.fromJson(Map<String, dynamic> j) => Player(
     name: j['name'] as String,
     stars: (j['stars'] as Map).map((k, v) => MapEntry(k as String, v as int)),
     stickers: (j['stickers'] as List).cast<String>().toSet(),
+    onboarded: j['onboarded'] as bool? ?? false,
   );
 }
 
@@ -86,6 +95,11 @@ class Progress extends ChangeNotifier {
 
   Future<void> select(int index) async {
     activeIndex = index;
+    await _save();
+  }
+
+  Future<void> markOnboarded() async {
+    active!.onboarded = true;
     await _save();
   }
 

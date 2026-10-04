@@ -73,6 +73,41 @@ class Brain {
     }
   }
 
+  /// Second opinion when keywords miss: did the child complete this goal?
+  /// Asked in a fresh session so it does not disturb the character.
+  Future<bool> judgeGoal({
+    required String goalRu,
+    required String exampleEs,
+    required String childSaid,
+  }) async {
+    final chat = await _model.openChat(
+      systemInstruction: 'You check a language-learning game for children. Answer with exactly one word: yes or no.',
+      temperature: 0,
+      topK: 1,
+      maxOutputTokens: 4,
+      modelType: ModelType.gemma4,
+    );
+    try {
+      await chat.addQueryChunk(
+        Message.text(
+          text:
+              'Task for the child (in Russian): "$goalRu". Example of a correct answer: "$exampleEs".\n'
+              'Speech recognition wrote what the child said, possibly with spelling mistakes: "$childSaid".\n'
+              'Did the child clearly do the task? Ignore spelling and small grammar mistakes, '
+              'but a wrong item or a wrong number is "no".',
+          isUser: true,
+        ),
+      );
+      final buf = StringBuffer();
+      await for (final r in chat.generateChatResponseAsync()) {
+        if (r is TextResponse) buf.write(r.token);
+      }
+      return buf.toString().trim().toLowerCase().startsWith('y');
+    } finally {
+      await chat.close();
+    }
+  }
+
   Future<void> endScene() async {
     await _scene?.close();
     _scene = null;

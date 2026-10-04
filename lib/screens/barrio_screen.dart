@@ -15,6 +15,7 @@ class BarrioScreen extends StatelessWidget {
     'panaderia': Rect.fromLTWH(0.06, 0.08, 0.31, 0.24),
     'kiosco': Rect.fromLTWH(0.37, 0.08, 0.26, 0.24),
     'heladeria': Rect.fromLTWH(0.63, 0.08, 0.34, 0.25),
+    'plaza': Rect.fromLTWH(0.22, 0.40, 0.56, 0.22),
   };
 
   void _open(BuildContext context, Mission m) =>
@@ -51,7 +52,9 @@ class BarrioScreen extends StatelessWidget {
                     fit: BoxFit.fill,
                   ),
                 ),
-                for (final m in missions)
+                for (final m in missions.where(
+                  (m) => _hotspots.containsKey(m.id),
+                ))
                   Positioned.fromRect(
                     rect: Rect.fromLTWH(
                       dx + _hotspots[m.id]!.left * imgW,
@@ -63,7 +66,9 @@ class BarrioScreen extends StatelessWidget {
                       behavior: HitTestBehavior.opaque,
                       onTap: () => _open(context, m),
                       child: Align(
-                        alignment: Alignment.bottomCenter,
+                        alignment: m.id == 'plaza'
+                            ? Alignment.topCenter
+                            : Alignment.bottomCenter,
                         child: _ShopBadge(
                           mission: m,
                           stars: player.stars[m.id] ?? 0,
@@ -124,30 +129,45 @@ class BarrioScreen extends StatelessWidget {
                             ),
                           ),
                           const SizedBox(height: 8),
-                          for (final m in missions)
-                            ListTile(
-                              contentPadding: const EdgeInsets.symmetric(
-                                horizontal: 4,
-                              ),
-                              leading: CircleAvatar(
-                                radius: 26,
-                                backgroundColor: Palette.cream,
-                                backgroundImage: AssetImage(m.characterImage),
-                              ),
-                              title: Text(
-                                m.placeEs,
-                                style: const TextStyle(
-                                  fontSize: 18,
-                                  fontWeight: FontWeight.w800,
+                          GridView.count(
+                            padding: EdgeInsets.zero,
+                            crossAxisCount: 3,
+                            shrinkWrap: true,
+                            physics: const NeverScrollableScrollPhysics(),
+                            mainAxisSpacing: 6,
+                            crossAxisSpacing: 6,
+                            childAspectRatio: 0.95,
+                            children: [
+                              for (final m in missions)
+                                InkWell(
+                                  borderRadius: BorderRadius.circular(18),
+                                  onTap: () => _open(context, m),
+                                  child: Column(
+                                    mainAxisAlignment: MainAxisAlignment.center,
+                                    children: [
+                                      CircleAvatar(
+                                        radius: 28,
+                                        backgroundColor: Palette.cream,
+                                        backgroundImage: AssetImage(
+                                          m.characterImage,
+                                        ),
+                                      ),
+                                      const SizedBox(height: 4),
+                                      FittedBox(
+                                        child: Text(
+                                          _short(m.placeEs),
+                                          style: const TextStyle(
+                                            fontSize: 15,
+                                            fontWeight: FontWeight.w800,
+                                          ),
+                                        ),
+                                      ),
+                                      Stars(player.stars[m.id] ?? 0, size: 15),
+                                    ],
+                                  ),
                                 ),
-                              ),
-                              subtitle: Text('${m.placeRu} · ${m.character}'),
-                              trailing: Stars(
-                                player.stars[m.id] ?? 0,
-                                size: 20,
-                              ),
-                              onTap: () => _open(context, m),
-                            ),
+                            ],
+                          ),
                         ],
                       ),
                     ),
@@ -181,7 +201,7 @@ class _ShopBadge extends StatelessWidget {
       children: [
         FittedBox(
           child: Text(
-            mission.placeEs.replaceFirst(RegExp(r'^(La|El) '), ''),
+            _short(mission.placeEs),
             style: const TextStyle(fontWeight: FontWeight.w900, fontSize: 13),
           ),
         ),
@@ -220,3 +240,5 @@ class _Pill extends StatelessWidget {
     ),
   );
 }
+
+String _short(String place) => place.replaceFirst(RegExp(r'^(La|El) '), '');

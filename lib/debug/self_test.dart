@@ -11,7 +11,8 @@ Future<void> runSelfTest() async {
   final sw = Stopwatch()..start();
   void log(String s) => debugPrint('[SELFTEST ${sw.elapsedMilliseconds}ms] $s');
 
-  final m = missions.first;
+  final run = MissionRun(missions.first, 0);
+  final m = run.mission;
   for (final phrase in [
     'Hola, buen día. ¿Me das tres medialunas, por favor?',
     '¿Cuánto es?',
@@ -24,14 +25,14 @@ Future<void> runSelfTest() async {
     t = sw.elapsedMilliseconds;
     final heard = await services.speech.transcribe(wav);
     log('STT ${sw.elapsedMilliseconds - t}ms: "$heard"');
-    final met = m.goals
+    final met = run.goals
         .where((g) => g.isMetBy(heard))
         .map((g) => g.id)
         .toList();
     log('goals met: $met');
 
-    if (phrase == missions.first.goals.first.hintEs || met.contains('greet')) {
-      await services.brain.startScene(systemPromptFor(m), m.openerEs);
+    if (phrase == run.goals.first.hintEs || met.contains('greet')) {
+      await services.brain.startScene(run.systemPrompt, m.openerEs);
     }
     t = sw.elapsedMilliseconds;
     var first = -1;

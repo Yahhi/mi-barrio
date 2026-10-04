@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 
 import 'ai/audio.dart';
 import 'ai/brain.dart';
+import 'ai/engines.dart';
 import 'ai/model_files.dart';
 import 'ai/speech.dart';
 import 'game/progress.dart';
@@ -16,6 +17,8 @@ class Services {
   late Speech speech;
   late Brain brain;
   late Audio audio;
+  late Ears ears;
+  late Mouth mouth;
 }
 
 Services get services => Services.instance;

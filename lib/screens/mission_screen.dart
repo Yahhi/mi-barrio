@@ -19,7 +19,6 @@ class _Line {
   String? ru;
   bool translating = false;
   bool showRu = false;
-  String? wavPath;
 }
 
 /// One shop, one character, one conversation. The child talks into the mic;
@@ -37,6 +36,10 @@ class MissionScreen extends StatefulWidget {
 class _MissionScreenState extends State<MissionScreen> {
   Mission get m => widget.mission;
 
+  /// Last variant played per mission, so the next visit is different.
+  static final _lastVariant = <String, int>{};
+  late final MissionRun run;
+
   final _lines = <_Line>[];
   final _met = <String>{};
   final _hinted = <String>{};
@@ -47,25 +50,45 @@ class _MissionScreenState extends State<MissionScreen> {
   Timer? _autoStop;
   String? _justMet;
 
+  // Help for a child who is stuck.
+  Timer? _nudgeTimer;
+  bool _nudge = false;
+  int _misses = 0;
+
+  // First-time walkthrough with Copo.
+  final _goalsKey = GlobalKey();
+  final _micKey = GlobalKey();
+  final _hintKey = GlobalKey();
+  int? _coachStep;
+
   @override
   void initState() {
     super.initState();
+    run = MissionRun.pick(m, lastIndex: _lastVariant[m.id]);
+    _lastVariant[m.id] = run.variantIndex;
     _start();
   }
 
   @override
   void dispose() {
     _autoStop?.cancel();
-    services.audio.stopPlayback();
+    _nudgeTimer?.cancel();
+    services.mouth.stop();
     services.brain.endScene();
     super.dispose();
   }
 
   Future<void> _start() async {
-    await services.brain.startScene(systemPromptFor(m), m.openerEs);
+    await services.brain.startScene(run.systemPrompt, m.openerEs);
     final line = _Line.character(m.openerEs);
     setState(() => _lines.add(line));
     await _speak(line);
+    if (mounted &&
+        !services.progress.active!.onboarded &&
+        const String.fromEnvironment('DEMO_SAY').isEmpty) {
+      _nudgeTimer?.cancel();
+      setState(() => _coachStep = 0);
+    }
 
     // Debug/demo: --dart-define=DEMO_SAY="Hola|Tres medialunas|..." plays
     // the child's side of the conversation by itself.
@@ -82,20 +105,21 @@ class _MissionScreenState extends State<MissionScreen> {
   // ---- talking -----------------------------------------------------------
 
   Future<void> _micPressed() async {
+    _clearNudge();
     switch (_phase) {
       case _Phase.idle:
-        if (!await services.audio.hasMicPermission()) {
+        if (!await services.ears.hasPermission()) {
           _showToast('Разреши доступ к микрофону в настройках 🎤');
           return;
         }
         HapticFeedback.mediumImpact();
-        await services.audio.startRecording();
+        await services.ears.start();
         setState(() => _phase = _Phase.listening);
         _autoStop = Timer(const Duration(seconds: 12), _stopListening);
       case _Phase.listening:
         await _stopListening();
       case _Phase.speaking:
-        await services.audio.stopPlayback();
+        await services.mouth.stop();
       default:
         break;
     }
@@ -106,15 +130,14 @@ class _MissionScreenState extends State<MissionScreen> {
     if (_phase != _Phase.listening) return;
     HapticFeedback.lightImpact();
     setState(() => _phase = _Phase.hearing);
-    final path = await services.audio.stopRecording();
     var text = '';
-    if (path != null) {
-      try {
-        text = await services.speech.transcribe(path);
-      } catch (e) {
-        debugPrint('STT failed: $e');
-      }
+    final sw = Stopwatch()..start();
+    try {
+      text = await services.ears.stop();
+    } catch (e) {
+      debugPrint('STT failed: $e');
     }
+    _timing('👂 ${sw.elapsedMilliseconds} ms');
     text = _dropWhisperGhosts(text);
     if (text.isEmpty) {
       setState(() => _phase = _Phase.idle);
@@ -126,7 +149,7 @@ class _MissionScreenState extends State<MissionScreen> {
 
   Future<void> _childSaid(String text) async {
     final newlyMet = [
-      for (final g in m.goals)
+      for (final g in run.goals)
         if (!_met.contains(g.id) && g.isMetBy(text)) g.id,
     ];
     setState(() {
@@ -141,8 +164,14 @@ class _MissionScreenState extends State<MissionScreen> {
 
     final reply = _Line.character('');
     setState(() => _lines.add(reply));
+    final sw = Stopwatch()..start();
+    var firstToken = true;
     try {
       await for (final token in services.brain.reply(text)) {
+        if (firstToken) {
+          firstToken = false;
+          _timing('🧠 ${sw.elapsedMilliseconds} ms');
+        }
         setState(() => reply.es += token);
         _scrollDown();
       }
@@ -154,30 +183,95 @@ class _MissionScreenState extends State<MissionScreen> {
       reply.es = '¿Cómo? No te escuché bien. ¿Me lo decís otra vez?';
     }
     setState(() {});
-    await _speak(reply);
+    // The keywords missed? Ask Gemma whether the child really did it, while
+    // the reply is being voiced (speech runs in its own isolate).
+    final speaking = _speak(reply, armNudge: false);
+    var progressed = newlyMet.isNotEmpty;
+    if (!progressed) progressed = await _judge(text);
+    await speaking;
+    _misses = progressed ? 0 : _misses + 1;
 
-    if (_met.length == m.goals.length) await _finish();
+    if (_met.length == run.goals.length) {
+      await _finish();
+    } else if (_misses >= 2) {
+      _showNudge();
+    } else {
+      _armNudge();
+    }
   }
 
-  Future<void> _speak(_Line line) async {
+  /// Checks the next unmet goals with the language model; true if one passed.
+  Future<bool> _judge(String text) async {
+    final candidates = run.goals.where((g) => !_met.contains(g.id)).take(2);
+    for (final g in candidates) {
+      try {
+        final ok = await services.brain.judgeGoal(
+          goalRu: g.titleRu,
+          exampleEs: g.hintEs,
+          childSaid: text,
+        );
+        if (ok && mounted) {
+          setState(() {
+            _met.add(g.id);
+            _justMet = g.id;
+          });
+          HapticFeedback.heavyImpact();
+          return true;
+        }
+      } catch (e) {
+        debugPrint('Judge failed: $e');
+      }
+    }
+    return false;
+  }
+
+  /// Latency of each step, for comparing engines.
+  final _timings = <String>[];
+  void _timing(String t) {
+    debugPrint('[timing] $t');
+    _timings.add(t);
+    if (_timings.length > 4) _timings.removeAt(0);
+  }
+
+  // ---- nudges ------------------------------------------------------------
+
+  void _armNudge() {
+    _nudgeTimer?.cancel();
+    if (_coachStep != null) return;
+    _nudgeTimer = Timer(const Duration(seconds: 12), _showNudge);
+  }
+
+  void _showNudge() {
+    if (!mounted || _phase == _Phase.done || _coachStep != null) return;
+    setState(() => _nudge = true);
+  }
+
+  void _clearNudge() {
+    _nudgeTimer?.cancel();
+    if (_nudge) setState(() => _nudge = false);
+  }
+
+  Future<void> _speak(_Line line, {bool armNudge = true}) async {
     if (!mounted) return;
     setState(() => _phase = _Phase.speaking);
     try {
-      if (line.wavPath == null) {
-        final path = services.audio.newWavPath('say');
-        await services.speech.synthesize(line.es, m.voice, m.speed, path);
-        line.wavPath = path;
-      }
-      await services.audio.play(line.wavPath!);
+      await services.mouth.say(
+        line.es,
+        voice: m.voice,
+        speed: m.speed,
+        speaker: m.character,
+      );
     } catch (e) {
       debugPrint('TTS failed: $e');
     }
     if (mounted && _phase == _Phase.speaking) {
       setState(() => _phase = _Phase.idle);
+      if (armNudge) _armNudge();
     }
   }
 
   Future<void> _typeInstead() async {
+    _clearNudge();
     final controller = TextEditingController();
     final text = await showModalBottomSheet<String>(
       context: context,
@@ -218,9 +312,10 @@ class _MissionScreenState extends State<MissionScreen> {
   // ---- help --------------------------------------------------------------
 
   Future<void> _showHint() async {
-    final goal = m.goals.firstWhere(
+    _clearNudge();
+    final goal = run.goals.firstWhere(
       (g) => !_met.contains(g.id),
-      orElse: () => m.goals.last,
+      orElse: () => run.goals.last,
     );
     _hinted.add(goal.id);
     setState(() {});
@@ -247,14 +342,11 @@ class _MissionScreenState extends State<MissionScreen> {
             const SizedBox(height: 20),
             FilledButton.icon(
               onPressed: () async {
-                final path = services.audio.newWavPath('hint');
-                await services.speech.synthesize(
+                await services.mouth.say(
                   goal.hintEs,
-                  Voice.daniela,
-                  0.8,
-                  path,
+                  voice: Voice.daniela,
+                  speed: 0.8,
                 );
-                await services.audio.play(path);
               },
               icon: const Icon(Icons.volume_up_rounded),
               label: const Text('Послушать'),
@@ -284,6 +376,7 @@ class _MissionScreenState extends State<MissionScreen> {
   // ---- finishing ---------------------------------------------------------
 
   Future<void> _finish() async {
+    _clearNudge();
     setState(() => _phase = _Phase.done);
     final reward = await services.progress.completeMission(m, _hinted.length);
     if (!mounted) return;
@@ -356,6 +449,20 @@ class _MissionScreenState extends State<MissionScreen> {
               ],
             ),
           ),
+          if (_nudge && _toast == null && _phase != _Phase.done)
+            Positioned(
+              left: 16,
+              right: 16,
+              bottom: MediaQuery.of(context).size.height * 0.27 + 24,
+              child: _CopoSays(
+                text: _misses >= 2
+                    ? 'Не получается? Нажми 💡 наверху — я подскажу, что сказать!'
+                    : 'Не знаешь, что сказать? Нажми 💡 — там готовая фраза.',
+                onTap: _showHint,
+                onClose: _clearNudge,
+              ),
+            ),
+          if (_coachStep != null) _coach(),
           if (_toast != null)
             Positioned(
               left: 24,
@@ -375,6 +482,57 @@ class _MissionScreenState extends State<MissionScreen> {
               ),
             ),
         ],
+      ),
+    );
+  }
+
+  static const _coachTexts = [
+    'Привет, я Копо! Вот твоё задание. Сделай всё по списку — и получишь звёзды.',
+    'Нажми на микрофон и говори по-испански. Нажми ещё раз, когда закончишь.',
+    'Не знаешь, что сказать? Жми 💡 — я покажу фразу и переведу её. Без подсказок — 3 звезды!',
+  ];
+
+  Widget _coach() {
+    final key = [_goalsKey, _micKey, _hintKey][_coachStep!];
+    final box = key.currentContext?.findRenderObject() as RenderBox?;
+    final target = box == null
+        ? null
+        : (box.localToGlobal(Offset.zero) & box.size).inflate(8);
+    final screen = MediaQuery.of(context).size;
+    final below = target != null && target.center.dy < screen.height / 2;
+    return Positioned.fill(
+      child: GestureDetector(
+        behavior: HitTestBehavior.opaque,
+        onTap: () async {
+          if (_coachStep! < _coachTexts.length - 1) {
+            setState(() => _coachStep = _coachStep! + 1);
+          } else {
+            setState(() => _coachStep = null);
+            await services.progress.markOnboarded();
+            _armNudge();
+          }
+        },
+        child: Stack(
+          children: [
+            Positioned.fill(
+              child: CustomPaint(painter: _SpotlightPainter(target)),
+            ),
+            Positioned(
+              left: 16,
+              right: 16,
+              top: below ? target.bottom + 16 : null,
+              bottom: below
+                  ? null
+                  : screen.height - (target?.top ?? screen.height / 2) + 16,
+              child: _CopoSays(
+                text: _coachTexts[_coachStep!],
+                footer: _coachStep! < _coachTexts.length - 1
+                    ? 'Нажми, чтобы дальше  ${_coachStep! + 1}/3'
+                    : 'Поехали!  3/3',
+              ),
+            ),
+          ],
+        ),
       ),
     );
   }
@@ -399,16 +557,20 @@ class _MissionScreenState extends State<MissionScreen> {
             ),
           ),
         ),
-        Badge(
-          isLabelVisible: _hinted.isNotEmpty,
-          label: Text('${_hinted.length}'),
-          child: IconButton.filled(
-            style: IconButton.styleFrom(
-              backgroundColor: Palette.sun,
-              foregroundColor: Palette.ink,
+        _Pulse(
+          active: _nudge,
+          child: Badge(
+            key: _hintKey,
+            isLabelVisible: _hinted.isNotEmpty,
+            label: Text('${_hinted.length}'),
+            child: IconButton.filled(
+              style: IconButton.styleFrom(
+                backgroundColor: Palette.sun,
+                foregroundColor: Palette.ink,
+              ),
+              icon: const Icon(Icons.lightbulb_rounded),
+              onPressed: _phase == _Phase.done ? null : _showHint,
             ),
-            icon: const Icon(Icons.lightbulb_rounded),
-            onPressed: _phase == _Phase.done ? null : _showHint,
           ),
         ),
       ],
@@ -420,6 +582,7 @@ class _MissionScreenState extends State<MissionScreen> {
     child: GestureDetector(
       onTap: () => setState(() => _goalsOpen = !_goalsOpen),
       child: SoftCard(
+        key: _goalsKey,
         padding: const EdgeInsets.fromLTRB(14, 10, 14, 10),
         child: AnimatedSize(
           duration: const Duration(milliseconds: 250),
@@ -432,8 +595,8 @@ class _MissionScreenState extends State<MissionScreen> {
                   Expanded(
                     child: Text(
                       _goalsOpen
-                          ? m.introRu
-                          : 'Задание: ${_met.length} из ${m.goals.length}',
+                          ? run.introRu
+                          : 'Задание: ${_met.length} из ${run.goals.length}',
                       style: const TextStyle(
                         fontWeight: FontWeight.w800,
                         fontSize: 15,
@@ -450,7 +613,7 @@ class _MissionScreenState extends State<MissionScreen> {
               ),
               if (_goalsOpen) ...[
                 const SizedBox(height: 6),
-                for (final g in m.goals)
+                for (final g in run.goals)
                   Padding(
                     padding: const EdgeInsets.symmetric(vertical: 2),
                     child: Row(
@@ -653,6 +816,7 @@ class _MissionScreenState extends State<MissionScreen> {
                   crossAxisAlignment: CrossAxisAlignment.end,
                   children: [
                     _MicButton(
+                      key: _micKey,
                       color: color,
                       icon: icon,
                       pulsing: _phase == _Phase.listening,
@@ -709,6 +873,7 @@ class _MiniButton extends StatelessWidget {
 
 class _MicButton extends StatefulWidget {
   const _MicButton({
+    super.key,
     required this.color,
     required this.icon,
     required this.pulsing,
@@ -873,4 +1038,144 @@ class _RewardDialog extends StatelessWidget {
       ),
     ),
   );
+}
+
+/// Copo the Samoyed with a speech bubble: onboarding and nudges.
+class _CopoSays extends StatelessWidget {
+  const _CopoSays({required this.text, this.footer, this.onTap, this.onClose});
+
+  final String text;
+  final String? footer;
+  final VoidCallback? onTap;
+  final VoidCallback? onClose;
+
+  @override
+  Widget build(BuildContext context) => GestureDetector(
+    onTap: onTap,
+    child: Row(
+      crossAxisAlignment: CrossAxisAlignment.end,
+      children: [
+        Image.asset('assets/images/characters/copo.png', height: 84),
+        const SizedBox(width: 6),
+        Expanded(
+          child: SoftCard(
+            padding: const EdgeInsets.fromLTRB(14, 10, 8, 10),
+            child: Row(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                Expanded(
+                  child: Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    mainAxisSize: MainAxisSize.min,
+                    children: [
+                      Text(
+                        text,
+                        style: const TextStyle(
+                          fontSize: 16,
+                          fontWeight: FontWeight.w700,
+                        ),
+                      ),
+                      if (footer != null)
+                        Padding(
+                          padding: const EdgeInsets.only(top: 6),
+                          child: Text(
+                            footer!,
+                            style: const TextStyle(
+                              fontSize: 13,
+                              color: Palette.celesteDark,
+                              fontWeight: FontWeight.w800,
+                            ),
+                          ),
+                        ),
+                    ],
+                  ),
+                ),
+                if (onClose != null)
+                  InkWell(
+                    onTap: onClose,
+                    child: const Padding(
+                      padding: EdgeInsets.all(4),
+                      child: Icon(
+                        Icons.close_rounded,
+                        size: 18,
+                        color: Colors.black38,
+                      ),
+                    ),
+                  ),
+              ],
+            ),
+          ),
+        ),
+      ],
+    ),
+  );
+}
+
+/// Dims the screen except for a rounded hole around [target].
+class _SpotlightPainter extends CustomPainter {
+  _SpotlightPainter(this.target);
+
+  final Rect? target;
+
+  @override
+  void paint(Canvas canvas, Size size) {
+    final dim = Path()..addRect(Offset.zero & size);
+    final path = target == null
+        ? dim
+        : Path.combine(
+            PathOperation.difference,
+            dim,
+            Path()..addRRect(
+              RRect.fromRectAndRadius(target!, const Radius.circular(28)),
+            ),
+          );
+    canvas.drawPath(path, Paint()..color = const Color(0xB3000000));
+    if (target != null) {
+      canvas.drawRRect(
+        RRect.fromRectAndRadius(target!, const Radius.circular(28)),
+        Paint()
+          ..color = Palette.sun
+          ..style = PaintingStyle.stroke
+          ..strokeWidth = 4,
+      );
+    }
+  }
+
+  @override
+  bool shouldRepaint(_SpotlightPainter old) => old.target != target;
+}
+
+/// Gently pulses its child while [active], to draw a child's eye to it.
+class _Pulse extends StatefulWidget {
+  const _Pulse({required this.active, required this.child});
+
+  final bool active;
+  final Widget child;
+
+  @override
+  State<_Pulse> createState() => _PulseState();
+}
+
+class _PulseState extends State<_Pulse> with SingleTickerProviderStateMixin {
+  late final _c = AnimationController(
+    vsync: this,
+    duration: const Duration(milliseconds: 600),
+  )..repeat(reverse: true);
+
+  @override
+  void dispose() {
+    _c.dispose();
+    super.dispose();
+  }
+
+  @override
+  Widget build(BuildContext context) => widget.active
+      ? ScaleTransition(
+          scale: Tween(
+            begin: 1.0,
+            end: 1.3,
+          ).animate(CurvedAnimation(parent: _c, curve: Curves.easeInOut)),
+          child: widget.child,
+        )
+      : widget.child;
 }
