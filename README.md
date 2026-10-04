@@ -85,8 +85,8 @@ lib/
 
 ## What testing with the kids taught us (and what's next)
 
-- **More places.** The first question was "where are the other ones?" Next: the colectivo, the plaza, the doctor.
-- **Help when stuck.** After the first phrase a child didn't know what to say, and left and re-entered the shop to start over. Copo or the shopkeeper should nudge a quiet child.
+- **More places.** They finished all three missions in about 10 minutes and asked for more. Next: the colectivo, the plaza, the doctor.
+- **Onboarding.** Nobody discovered the 💡 hint button. After the first phrase a child didn't know what to say, and left and re-entered the shop to start over. Next: Copo walks new players through the first shop and points out the hints, and the shopkeeper nudges a quiet child.
 - **Speech recognition errors must never block the game.** One goal didn't tick although the child said it correctly. Next: show more clearly what the app heard, and add an "I said it" button.
 - **A little variety on every visit:** a different quantity, a different item, a shop that has run out of something.
 - **More natural voices.** Piper is fast and free, but it doesn't sound like a real porteña.
