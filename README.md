@@ -10,7 +10,7 @@ Built for the [**DEV Hacktoberfest Weekend Challenge 2026: Build for a Friend**]
   <img src="docs/screenshots/reward.png" width="240" alt="Mission complete with new stickers">
 </p>
 
-🎬 **Demo:** [watch on YouTube](https://youtube.com/shorts/pj6c-IQYnVY)
+🎬 **Demo:** [watch on YouTube](https://youtube.com/shorts/pj6c-IQYnVY) · 📝 **Story:** [read on DEV](https://dev.to/yahhi/mi-barrio-my-kids-practice-argentine-spanish-with-ai-shopkeepers-that-live-on-the-phone-3i4l)
 
 ## How it plays
 
