@@ -10,6 +10,8 @@ Built for the [**DEV Hacktoberfest Weekend Challenge 2026: Build for a Friend**]
   <img src="docs/screenshots/reward.png" width="240" alt="Mission complete with new stickers">
 </p>
 
+🎬 **Demo:** [watch on YouTube](https://youtube.com/shorts/pj6c-IQYnVY)
+
 ## How it plays
 
 Three shops, three characters, each a mission with five small goals written in Russian:
