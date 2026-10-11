@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 
 import '../app.dart';
 import '../game/missions.dart';
+import '../explore/explore_screen.dart';
 import 'album_screen.dart';
 import 'mission_screen.dart';
 import 'players_screen.dart';
@@ -167,6 +168,24 @@ class BarrioScreen extends StatelessWidget {
                                   ),
                                 ),
                             ],
+                          ),
+                          const SizedBox(height: 8),
+                          SizedBox(
+                            width: double.infinity,
+                            child: FilledButton.icon(
+                              style: FilledButton.styleFrom(
+                                backgroundColor: Palette.leaf,
+                              ),
+                              onPressed: () => Navigator.of(context).push(
+                                MaterialPageRoute(
+                                  builder: (_) => const ExploreScreen(),
+                                ),
+                              ),
+                              icon: const Icon(Icons.eco_rounded),
+                              label: Text(
+                                'На улицу! Гербарий Копо · ${player.finds.map((f) => f.plantId).toSet().length}',
+                              ),
+                            ),
                           ),
                         ],
                       ),

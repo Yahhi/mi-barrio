@@ -1,0 +1,1161 @@
+[
+ {
+  "id": "jacaranda",
+  "scientific": "Jacaranda mimosifolia",
+  "es": "jacarandá",
+  "es_article": "el",
+  "ru": "жакаранда",
+  "kind": "árbol",
+  "origin": "native_ar",
+  "origin_ru": "Жакаранда родом из горных лесов на севере Аргентины. В Буэнос-Айрес её привёз садовник Карлос Тайс в конце XIX века.",
+  "fact_ru": "В 2015 году жакаранду выбрали особым деревом Буэнос-Айреса. В городе растут тысячи таких деревьев!",
+  "fact_es": "En 2015 el jacarandá fue elegido árbol distintivo de Buenos Aires. ¡Hay miles en la ciudad!",
+  "when_to_find": "цветёт в ноябре (сиреневато-голубые цветы), иногда ещё немного в феврале–марте",
+  "look_for_ru": "сиреневые цветы-колокольчики, ажурные листья, плоды похожи на плоские кастаньеты",
+  "safety": "dont_eat",
+  "safety_ru": "Семена и листья могут быть ядовиты. Не бери их в рот.",
+  "sources": [
+   "https://buenosaires.gob.ar/noticias/el-jacaranda-arbol-distintivo-de-la-ciudad-de-buenos-aires",
+   "https://buenosaires.gob.ar/gcaba_historico/arboles-nativos/jacaranda",
+   "https://es.wikipedia.org/wiki/Jacaranda_mimosifolia"
+  ]
+ },
+ {
+  "id": "ceibo",
+  "scientific": "Erythrina crista-galli",
+  "es": "ceibo",
+  "es_article": "el",
+  "ru": "эритрина петушиный гребень",
+  "kind": "árbol",
+  "origin": "native_ar",
+  "origin_ru": "Сейбо — местное дерево. Оно само растёт на берегах Параны и Рио-де-ла-Платы.",
+  "fact_ru": "Цветок сейбо — национальный цветок Аргентины с 1942 года. Его научное имя значит «петушиный гребень» — из-за формы цветка.",
+  "fact_es": "El ceibo es la flor nacional desde 1942. Su nombre científico significa «cresta de gallo».",
+  "when_to_find": "цветёт с октября по апрель, больше всего летом (ярко-красные цветы)",
+  "look_for_ru": "красные бархатные цветы гроздьями, колючие ветки, кривой ствол у воды",
+  "safety": "dont_touch",
+  "safety_ru": "На ветках есть колючки. Листья и другие части ядовиты — ничего не бери в рот.",
+  "sources": [
+   "https://www.argentina.gob.ar/pais/ceibo",
+   "https://es.wikipedia.org/wiki/Erythrina_crista-galli",
+   "https://www.argentina.gob.ar/centro-cultural-de-la-ciencia/arboles-y-juegos-del-parque-de-las-ciencias/arboles"
+  ]
+ },
+ {
+  "id": "palo_borracho",
+  "scientific": "Ceiba speciosa",
+  "es": "palo borracho",
+  "es_article": "el",
+  "ru": "сейба великолепная",
+  "kind": "árbol",
+  "origin": "native_ar",
+  "origin_ru": "Это дерево родом из лесов на северо-востоке Аргентины и соседних стран.",
+  "fact_ru": "Толстый ствол-бутылка запасает воду. А у молодых деревьев ствол зелёный и сам делает пищу из света, как лист!",
+  "fact_es": "Su tronco panzón guarda agua. De joven el tronco es verde y hace fotosíntesis, ¡como una hoja!",
+  "when_to_find": "цветёт с января по май (розовые цветы с белой серединкой); потом плоды раскрываются, а внутри белый пух",
+  "look_for_ru": "ствол-бутылка с толстыми шипами, крупные розовые цветы",
+  "safety": "dont_touch",
+  "safety_ru": "Ствол и ветки покрыты острыми шипами. Не трогай и не обнимай ствол.",
+  "sources": [
+   "https://es.wikipedia.org/wiki/Ceiba_speciosa",
+   "https://www.argentina.gob.ar/centro-cultural-de-la-ciencia/arboles-y-juegos-del-parque-de-las-ciencias/arboles"
+  ]
+ },
+ {
+  "id": "tipa",
+  "scientific": "Tipuana tipu",
+  "es": "tipa",
+  "es_article": "la",
+  "ru": "типуана",
+  "ru_note": "транслитерация, устоявшегося русского названия нет",
+  "kind": "árbol",
+  "origin": "native_ar",
+  "origin_ru": "Типа родом из горных лесов на севере Аргентины. В Буэнос-Айресе её стал сажать садовник Карлос Тайс.",
+  "fact_ru": "В декабре под типой бывает «дождик». Капли выделяют крошечные насекомые-пенницы, которые пьют сок дерева. Капли безвредные.",
+  "fact_es": "En diciembre la tipa «llora». Las gotas son de unos bichitos que toman su savia. No hacen nada.",
+  "when_to_find": "цветёт в начале декабря (жёлтые цветы засыпают тротуары); «дождик» — в декабре",
+  "look_for_ru": "огромная раскидистая крона, жёлтые цветы, плоды с одним крылышком",
+  "safety": "ok",
+  "safety_ru": "",
+  "sources": [
+   "https://buenosaires.gob.ar/gcaba_historico/noticias/tipuana-tipu",
+   "https://es.wikipedia.org/wiki/Tipuana_tipu"
+  ]
+ },
+ {
+  "id": "ombu",
+  "scientific": "Phytolacca dioica",
+  "es": "ombú",
+  "es_article": "el",
+  "ru": "омбу",
+  "kind": "árbol",
+  "origin": "native_ar",
+  "origin_ru": "Омбу родом из северо-восточной Аргентины, Уругвая и юга Бразилии. Он — символ гаучо и пампы.",
+  "fact_ru": "Омбу огромный, но у него нет твёрдой древесины: его ствол мягкий и губчатый, почти как у травы.",
+  "fact_es": "Es enorme, pero no tiene madera dura: su tronco es blando, casi como el de una hierba.",
+  "when_to_find": "можно найти круглый год: он вечнозелёный",
+  "look_for_ru": "огромное толстое основание с корнями поверх земли, крона-зонтик",
+  "safety": "dont_eat",
+  "safety_ru": "Сок, листья и ягоды ядовиты. Ничего не бери в рот и мой руки после игры.",
+  "sources": [
+   "https://www.argentina.gob.ar/centro-cultural-de-la-ciencia/arboles-y-juegos-del-parque-de-las-ciencias/arboles",
+   "https://es.wikipedia.org/wiki/Phytolacca_dioica",
+   "https://en.wikipedia.org/wiki/Phytolacca_dioica"
+  ]
+ },
+ {
+  "id": "lapacho_rosado",
+  "scientific": "Handroanthus impetiginosus",
+  "also_matches": [
+   "Handroanthus heptaphyllus"
+  ],
+  "es": "lapacho rosado",
+  "es_article": "el",
+  "ru": "розовое лапачо",
+  "kind": "árbol",
+  "origin": "native_ar",
+  "origin_ru": "Лапачо родом из лесов на севере Аргентины. В Буэнос-Айресе его сажают на улицах и в парках.",
+  "fact_ru": "Лапачо цветёт, когда у него ещё нет листьев. Поэтому всё дерево похоже на розовое облако!",
+  "fact_es": "El lapacho florece antes de tener hojas. ¡Parece una nube rosada!",
+  "when_to_find": "цветёт в конце зимы и начале весны (август–сентябрь), розовые цветы на голых ветках",
+  "look_for_ru": "розовые цветы-трубочки с жёлтым горлышком на ветках без листьев",
+  "safety": "dont_eat",
+  "safety_ru": "Кора и древесина содержат вредные вещества. Не бери их в рот.",
+  "sources": [
+   "https://buenosaires.gob.ar/espaciopublicoehigieneurbana/gestion-comunal/arbopedia/lapacho-rosado",
+   "https://buenosaires.gob.ar/gcaba_historico/arboles-nativos/lapacho-rosado",
+   "https://es.wikipedia.org/wiki/Handroanthus_impetiginosus"
+  ]
+ },
+ {
+  "id": "timbo",
+  "scientific": "Enterolobium contortisiliquum",
+  "es": "timbó",
+  "es_article": "el",
+  "ru": "тимбо",
+  "ru_note": "транслитерация, устоявшегося русского названия нет",
+  "kind": "árbol",
+  "origin": "native_ar",
+  "origin_ru": "Тимбо — местное дерево. Оно растёт в лесах вдоль Параны и Рио-де-ла-Платы.",
+  "fact_ru": "Чёрные плоды тимбо закручены и похожи на ухо! Они долго висят на дереве.",
+  "fact_es": "Los frutos del timbó son negros y enrulados, ¡parecen una oreja!",
+  "when_to_find": "цветёт с октября по январь (белые цветы-шарики); чёрные плоды-«ушки» видны долго",
+  "look_for_ru": "высокое дерево с кроной-зонтиком, перистые листья, чёрные плоды-«ушки»",
+  "safety": "dont_eat",
+  "safety_ru": "Плоды ядовиты — от них болеют даже коровы. Не бери их в рот.",
+  "sources": [
+   "https://buenosaires.gob.ar/gcaba_historico/noticias/enterolobium-contortisiliquum",
+   "https://es.wikipedia.org/wiki/Enterolobium_contortisiliquum",
+   "https://www.argentina.gob.ar/centro-cultural-de-la-ciencia/arboles-y-juegos-del-parque-de-las-ciencias/arboles"
+  ]
+ },
+ {
+  "id": "aguaribay",
+  "scientific": "Schinus areira",
+  "also_matches": [
+   "Schinus molle"
+  ],
+  "es": "aguaribay",
+  "es_article": "el",
+  "ru": "агуарибай",
+  "ru_note": "транслитерация, устоявшегося русского названия нет (близкий вид Schinus molle — «шинус мягкий», «перуанское перечное дерево»)",
+  "kind": "árbol",
+  "origin": "native_ar",
+  "origin_ru": "Агуарибай родом из центра и севера Аргентины, где сухо и солнечно.",
+  "fact_ru": "В Буэнос-Айресе растёт агуарибай, которому больше 150 лет. В 1943 году его первым в стране объявили историческим деревом.",
+  "fact_es": "Un aguaribay porteño de más de 150 años fue el primer árbol histórico por decreto, en 1943.",
+  "when_to_find": "вечнозелёный, виден круглый год; цветёт весной, потом появляются гроздья розово-красных ягодок",
+  "look_for_ru": "свисающие ветки, узкие листочки сильно пахнут, если потереть, розовые ягодки",
+  "safety": "dont_eat",
+  "safety_ru": "Ягоды и листья могут вызвать рвоту. Не бери их в рот.",
+  "sources": [
+   "https://buenosaires.gob.ar/gcaba_historico/noticias/arboles-historicos-de-la-ciudad-el-aguaribay-del-perito-moreno",
+   "https://es.wikipedia.org/wiki/Schinus_areira",
+   "https://en.wikipedia.org/wiki/Schinus_molle",
+   "https://www.inaturalist.org/taxa/486531"
+  ]
+ },
+ {
+  "id": "palmera_pindo",
+  "scientific": "Syagrus romanzoffiana",
+  "es": "palmera pindó",
+  "es_article": "la",
+  "ru": "сиагрус Румянцева",
+  "kind": "palmera",
+  "origin": "native_ar",
+  "origin_ru": "Пиндо — местная пальма с северо-востока Аргентины, Уругвая, Парагвая и юга Бразилии.",
+  "fact_ru": "Эту пальму назвали в честь русского графа Румянцева! А ещё она выдерживает холод лучше многих пальм.",
+  "fact_es": "Esta palmera lleva el nombre de un conde ruso, Rumiántsev. ¡Y aguanta el frío!",
+  "when_to_find": "видна круглый год; цветёт летом, оранжевые плоды висят гроздьями в конце лета и осенью",
+  "look_for_ru": "высокий прямой ствол, длинные перистые листья, гроздья оранжевых плодов",
+  "safety": "ok",
+  "safety_ru": "",
+  "sources": [
+   "https://www.argentina.gob.ar/centro-cultural-de-la-ciencia/arboles-y-juegos-del-parque-de-las-ciencias/arboles",
+   "https://es.wikipedia.org/wiki/Syagrus_romanzoffiana"
+  ]
+ },
+ {
+  "id": "tala",
+  "scientific": "Celtis tala",
+  "also_matches": [
+   "Celtis ehrenbergiana"
+  ],
+  "es": "tala",
+  "es_article": "el",
+  "ru": "тала",
+  "ru_note": "транслитерация, устоявшегося русского названия нет",
+  "kind": "árbol",
+  "origin": "native_ar",
+  "origin_ru": "Тала — коренное дерево Буэнос-Айреса. Раньше целые леса из талы росли на обрывах от Бельграно до парка Лесама.",
+  "fact_ru": "Тала привлекает пять видов ярких бабочек, например синюю бабочку-сапфир. А птицы едят её сладкие ягодки.",
+  "fact_es": "El tala atrae cinco mariposas de colores. Y los pájaros comen sus frutitos dulces.",
+  "when_to_find": "цветёт весной незаметными цветками, потом появляются маленькие оранжевые ягодки",
+  "look_for_ru": "кривой ствол, острые колючки у основания листьев, оранжевые ягодки",
+  "safety": "dont_touch",
+  "safety_ru": "На ветках острые колючки. Осторожно, не хватайся за ветки.",
+  "sources": [
+   "https://buenosaires.gob.ar/gcaba_historico/arboles-nativos/tala",
+   "https://es.wikipedia.org/wiki/Celtis_tala",
+   "https://en.wikipedia.org/wiki/Celtis_tala"
+  ]
+ },
+ {
+  "id": "sauce_criollo",
+  "scientific": "Salix humboldtiana",
+  "es": "sauce criollo",
+  "es_article": "el",
+  "ru": "ива Гумбольдта",
+  "ru_note": "перевод научного названия, устоявшегося русского названия нет",
+  "kind": "árbol",
+  "origin": "native_ar",
+  "origin_ru": "Это единственная местная ива Аргентины. Она сама растёт на берегах рек.",
+  "fact_ru": "В мире около 400 видов ив, и почти все живут на севере планеты. Только эта ива сама дошла до Южной Америки!",
+  "fact_es": "Hay unos 400 sauces en el mundo. ¡Solo este llegó solito hasta Sudamérica!",
+  "when_to_find": "весной цветёт серёжками; потом из коробочек летят семена с пухом",
+  "look_for_ru": "свисающие ветки, узкие длинные листья, очень шершавая кора, растёт у воды",
+  "safety": "ok",
+  "safety_ru": "",
+  "sources": [
+   "https://repositorio.inta.gob.ar/xmlui/bitstream/handle/20.500.12123/9721/INTA_CRPatagoniaNorte_EEABariloche_Martinez_A_Sauce_Criollo_Humboldtiana.pdf",
+   "https://es.wikipedia.org/wiki/Salix_humboldtiana"
+  ]
+ },
+ {
+  "id": "platano",
+  "scientific": "Platanus × hispanica",
+  "also_matches": [
+   "Platanus × acerifolia"
+  ],
+  "es": "plátano",
+  "es_article": "el",
+  "ru": "платан кленолистный",
+  "kind": "árbol",
+  "origin": "introduced",
+  "origin_ru": "Этот платан — гибрид двух платанов, американского и восточного; он появился в Европе почти 400 лет назад.",
+  "fact_ru": "В дикой природе такого дерева нет. Оно появилось в саду, когда рядом росли два разных платана.",
+  "fact_es": "No existe en la naturaleza: nació en un jardín, de la mezcla de dos plátanos distintos.",
+  "when_to_find": "круглый год; весной (сентябрь) новые листья, осенью (апрель–май) они желтеют, зимой висят шарики-плоды",
+  "look_for_ru": "Пятнистый ствол, кора отслаивается; листья как у клёна; шарики-плоды по два.",
+  "safety": "dont_touch",
+  "safety_ru": "Не разламывай пушистые шарики-плоды: их волоски раздражают глаза, нос и горло.",
+  "sources": [
+   "https://buenosaires.gob.ar/jefaturadegabinete/atencion-y-gestion-ciudadana/gestion-comunal/arbopedia/platano",
+   "https://en.wikipedia.org/wiki/Platanus_%C3%97_hispanica",
+   "https://ru.wikipedia.org/wiki/Платан_кленолистный"
+  ]
+ },
+ {
+  "id": "fresno_americano",
+  "scientific": "Fraxinus pennsylvanica",
+  "es": "fresno americano",
+  "es_article": "el",
+  "ru": "ясень пенсильванский",
+  "kind": "árbol",
+  "origin": "introduced",
+  "origin_ru": "Родом из Северной Америки — с востока США и Канады. Его сажают на улицах по всему миру.",
+  "fact_ru": "Это самое частое дерево на улицах Буэнос-Айреса: больше трети всех деревьев на тротуарах — такие ясени!",
+  "fact_es": "Es el árbol más común de las veredas porteñas: más de un tercio son fresnos.",
+  "when_to_find": "весной (сентябрь–октябрь) появляются листья, осенью (апрель–май) они ярко-жёлтые",
+  "look_for_ru": "Сложный лист из нескольких листочков; гроздья «вертолётиков»-крылаток.",
+  "safety": "ok",
+  "safety_ru": "",
+  "sources": [
+   "https://buenosaires.gob.ar/jefaturadegabinete/atencion-y-gestion-ciudadana/gestion-comunal/arbopedia/fresno-americano",
+   "https://data.buenosaires.gob.ar/dataset/arbolado-publico-lineal",
+   "https://en.wikipedia.org/wiki/Fraxinus_pennsylvanica"
+  ]
+ },
+ {
+  "id": "paraiso",
+  "scientific": "Melia azedarach",
+  "es": "paraíso",
+  "es_article": "el",
+  "ru": "мелия ацедарах",
+  "kind": "árbol",
+  "origin": "introduced",
+  "origin_ru": "Родом из Азии, от подножия Гималаев. В середине XIX века его привезли в Америку как красивое тенистое дерево.",
+  "fact_ru": "Его жёлтые шарики-плоды висят на голых ветках всю зиму. Для людей и собак они ядовиты.",
+  "fact_es": "Sus bolitas amarillas quedan colgando todo el invierno. Son venenosas para personas y perros.",
+  "when_to_find": "цветёт в октябре–ноябре (лиловые душистые цветы); жёлтые плоды видны осенью и зимой",
+  "look_for_ru": "Лиловые душистые гроздья цветов; жёлтые шарики на ветках зимой.",
+  "safety": "dont_eat",
+  "safety_ru": "Плоды и семена ядовиты! Ничего не бери в рот и мой руки.",
+  "sources": [
+   "https://es.wikipedia.org/wiki/Melia_azedarach",
+   "https://www.lagaceta.com.ar/nota/1143301/sociedad/estas-dos-plantas-son-muy-comunes-pero-pueden-ser-peligrosas-para-ninos-mascotas.html",
+   "https://plants.ces.ncsu.edu/plants/melia-azedarach/"
+  ]
+ },
+ {
+  "id": "ligustro",
+  "scientific": "Ligustrum lucidum",
+  "es": "ligustro",
+  "es_article": "el",
+  "ru": "бирючина блестящая",
+  "kind": "árbol",
+  "origin": "introduced",
+  "origin_ru": "Родом из Китая. В Аргентину его привезли в начале XX века, чтобы украшать сады и парки.",
+  "fact_ru": "Птицы едят его ягоды и разносят семена. Так лигустро убегает из города в дикие леса и теснит местные деревья.",
+  "fact_es": "Los pájaros comen sus frutitos y llevan las semillas lejos. Así invade los bosques nativos.",
+  "when_to_find": "зелёный круглый год; гроздья тёмно-синих ягод видны осенью и зимой",
+  "look_for_ru": "Блестящие тёмные листья парами; гроздья маленьких чёрно-синих ягод.",
+  "safety": "dont_eat",
+  "safety_ru": "Ягоды и листья ядовиты. Не бери их в рот.",
+  "sources": [
+   "https://www.argentina.gob.ar/node/264578",
+   "https://es.wikipedia.org/wiki/Ligustrum_lucidum",
+   "https://plants.ces.ncsu.edu/plants/ligustrum-lucidum/"
+  ]
+ },
+ {
+  "id": "tilo",
+  "scientific": "Tilia × moltkei",
+  "also_matches": [
+   "Tilia"
+  ],
+  "es": "tilo",
+  "es_article": "el",
+  "ru": "липа Мольтке",
+  "ru_note": "устоявшегося русского названия у этого гибрида нет; по-русски — просто «липа»",
+  "kind": "árbol",
+  "origin": "introduced",
+  "origin_ru": "Это гибрид американской и европейской лип, его вывели в Европе. В дикой природе он не растёт.",
+  "fact_ru": "Под липой бывает липко! Тли пьют сладкий сок дерева, а лишние капли падают вниз, даже на машины.",
+  "fact_es": "Debajo del tilo todo se pone pegajoso: los pulgones toman su savia y gotea.",
+  "when_to_find": "цветёт в октябре–ноябре (жёлтые цветки очень душистые)",
+  "look_for_ru": "Листья-сердечки с зубчиками; шарики-плоды на светлом «крылышке».",
+  "safety": "ok",
+  "safety_ru": "",
+  "sources": [
+   "https://buenosaires.gob.ar/jefaturadegabinete/atencion-y-gestion-ciudadana/gestion-comunal/arbopedia/tilo",
+   "https://en.wikipedia.org/wiki/Tilia",
+   "https://www.inaturalist.org/taxa/966269"
+  ]
+ },
+ {
+  "id": "crespon",
+  "scientific": "Lagerstroemia indica",
+  "es": "crespón",
+  "es_article": "el",
+  "ru": "лагерстрёмия индийская (индийская сирень)",
+  "kind": "árbol",
+  "origin": "introduced",
+  "origin_ru": "Родом из Восточной Азии — из Китая, Кореи и Японии.",
+  "fact_ru": "Каждый год это дерево сбрасывает тонкую кору, и ствол становится гладким и пятнистым.",
+  "fact_es": "Cada año se le cae la corteza y el tronco queda liso y manchado.",
+  "when_to_find": "цветёт весной и летом (розовые, белые или лиловые гроздья); осенью листья краснеют",
+  "look_for_ru": "Гладкий пятнистый ствол; пышные гроздья цветов с мятыми лепестками.",
+  "safety": "ok",
+  "safety_ru": "",
+  "sources": [
+   "https://buenosaires.gob.ar/jefaturadegabinete/atencion-y-gestion-ciudadana/gestion-comunal/arbopedia/crespon",
+   "https://en.wikipedia.org/wiki/Lagerstroemia_indica",
+   "https://ru.wikipedia.org/wiki/Лагерстрёмия_индийская"
+  ]
+ },
+ {
+  "id": "ficus",
+  "scientific": "Ficus benjamina",
+  "es": "ficus",
+  "es_article": "el",
+  "ru": "фикус бенджамина",
+  "kind": "árbol",
+  "origin": "introduced",
+  "origin_ru": "Родом из Азии и Австралии, из тёплых стран.",
+  "fact_ru": "В России его держат дома в горшке. А в Буэнос-Айресе он растёт на улице большим деревом!",
+  "fact_es": "En Rusia vive en una maceta adentro de casa. Acá crece en la vereda como árbol grande.",
+  "when_to_find": "зелёный круглый год",
+  "look_for_ru": "Блестящие листья с острым кончиком; свисающие веточки; светлый гладкий ствол.",
+  "safety": "dont_touch",
+  "safety_ru": "Если сломать лист или ветку, течёт белый сок. Он может вызвать аллергию.",
+  "sources": [
+   "https://data.buenosaires.gob.ar/dataset/arbolado-publico-lineal",
+   "https://en.wikipedia.org/wiki/Ficus_benjamina",
+   "https://ru.wikipedia.org/wiki/Фикус_бенджамина"
+  ]
+ },
+ {
+  "id": "gomero",
+  "scientific": "Ficus elastica",
+  "es": "gomero",
+  "es_article": "el",
+  "ru": "фикус каучуконосный",
+  "kind": "árbol",
+  "origin": "introduced",
+  "origin_ru": "Родом из Южной и Юго-Восточной Азии — от северо-востока Индии до Индонезии.",
+  "fact_ru": "В Индии люди направляют его корни через реки и годами выращивают живые мосты из корней.",
+  "fact_es": "En la India guían sus raíces sobre los ríos y forman puentes vivos.",
+  "when_to_find": "зелёный круглый год",
+  "look_for_ru": "Очень большие блестящие кожистые листья; новый лист свёрнут в трубочку.",
+  "safety": "dont_touch",
+  "safety_ru": "Белый млечный сок раздражает кожу и глаза и ядовит, если его проглотить.",
+  "sources": [
+   "https://en.wikipedia.org/wiki/Ficus_elastica",
+   "https://ru.wikipedia.org/wiki/Фикус_каучуконосный",
+   "https://data.buenosaires.gob.ar/dataset/arbolado-espacios-verdes"
+  ]
+ },
+ {
+  "id": "gomero_australiano",
+  "scientific": "Ficus macrophylla",
+  "es": "gomero (ficus australiano)",
+  "es_article": "el",
+  "ru": "фикус крупнолистный",
+  "kind": "árbol",
+  "origin": "introduced",
+  "origin_ru": "Родом из Австралии. Знаменитый гомеро в Реколете посадили ещё в XVIII веке.",
+  "fact_ru": "Гомеро у кладбища Реколета считают самым старым деревом города. Его огромную ветку держит статуя великана Атласа.",
+  "fact_es": "El gomero de Recoleta es el árbol más viejo de la ciudad. Una estatua de Atlas sostiene su rama.",
+  "when_to_find": "зелёный круглый год; лиловые «инжиринки» — летом и осенью",
+  "look_for_ru": "Огромные корни-подпорки; кожистые листья, снизу рыжеватые; лиловые шарики-плоды.",
+  "safety": "dont_touch",
+  "safety_ru": "Сломанные листья и ветки выделяют белый млечный сок — не трогай его.",
+  "sources": [
+   "https://buenosaires.gob.ar/gcaba_historico/gobierno/gestion-comunal/arbopedia/gomero-de-la-recoleta",
+   "https://buenosaires.gob.ar/gcaba_historico/gomeros-de-plaza-san-martin-de-tours",
+   "https://en.wikipedia.org/wiki/Ficus_macrophylla"
+  ]
+ },
+ {
+  "id": "eucalipto",
+  "scientific": "Eucalyptus camaldulensis",
+  "also_matches": [
+   "Eucalyptus globulus",
+   "Eucalyptus sideroxylon",
+   "Eucalyptus"
+  ],
+  "es": "eucalipto",
+  "es_article": "el",
+  "ru": "эвкалипт камальдульский",
+  "kind": "árbol",
+  "origin": "introduced",
+  "origin_ru": "Эвкалипты родом из Австралии. В Аргентину их привезли в середине XIX века.",
+  "fact_ru": "У цветка эвкалипта нет лепестков. Бутон закрыт крышечкой, она отпадает — и появляется пушистый помпон из тычинок.",
+  "fact_es": "Su flor no tiene pétalos: tiene una tapita que se cae y sale un pompón.",
+  "when_to_find": "зелёный круглый год; цветёт летом (белые пушистые цветки)",
+  "look_for_ru": "Гладкая светлая кора облезает лоскутами; узкие изогнутые листья, пахнут, если потереть.",
+  "safety": "dont_eat",
+  "safety_ru": "Не жуй листья: масло эвкалипта ядовито, если его проглотить. Не стой под сухими ветками.",
+  "sources": [
+   "https://en.wikipedia.org/wiki/Eucalyptus_camaldulensis",
+   "https://en.wikipedia.org/wiki/Eucalyptus",
+   "https://www.lanacion.com.ar/turismo/la-portena-al-sur-es-bella-e-historica-nid459754",
+   "https://www.rch.org.au/clinicalguide/guideline_index/Eucalyptus_Oil_Poisoning/",
+   "https://data.buenosaires.gob.ar/dataset/arbolado-espacios-verdes"
+  ]
+ },
+ {
+  "id": "casuarina",
+  "scientific": "Casuarina cunninghamiana",
+  "es": "casuarina",
+  "es_article": "la",
+  "ru": "казуарина Каннингема",
+  "ru_note": "устоявшегося русского названия вида нет: это перевод латинского; род по-русски — казуарина",
+  "kind": "árbol",
+  "origin": "introduced",
+  "origin_ru": "Родом из Австралии и Новой Гвинеи, там она растёт по берегам рек.",
+  "fact_ru": "Похожа на сосну, но это не хвойное дерево. Её «иголки» — тонкие зелёные веточки, а настоящие листья — крошечные чешуйки.",
+  "fact_es": "Parece un pino, pero no lo es: sus «agujas» son ramitas verdes.",
+  "when_to_find": "зелёная круглый год; маленькие «шишечки» видны на женских деревьях",
+  "look_for_ru": "Длинные тонкие свисающие веточки-«иголки»; крошечные шишечки.",
+  "safety": "ok",
+  "safety_ru": "",
+  "sources": [
+   "https://en.wikipedia.org/wiki/Casuarina_cunninghamiana",
+   "https://ru.wikipedia.org/wiki/Казуарина",
+   "https://data.buenosaires.gob.ar/dataset/arbolado-espacios-verdes"
+  ]
+ },
+ {
+  "id": "magnolia",
+  "scientific": "Magnolia grandiflora",
+  "es": "magnolia",
+  "es_article": "la",
+  "ru": "магнолия крупноцветковая",
+  "kind": "árbol",
+  "origin": "introduced",
+  "origin_ru": "Родом с юго-востока США. Её сажают в садах по всему миру из-за огромных душистых цветов.",
+  "fact_ru": "Магнолии появились так давно, что пчёл ещё не было. Учёные думают, что их цветы опыляли жуки.",
+  "fact_es": "Las magnolias son tan antiguas que, antes de las abejas, las visitaban escarabajos.",
+  "when_to_find": "цветёт в конце весны (огромные белые душистые цветы); зелёная круглый год",
+  "look_for_ru": "Огромные белые цветы; блестящие кожистые листья, снизу рыжеватые.",
+  "safety": "ok",
+  "safety_ru": "",
+  "sources": [
+   "https://en.wikipedia.org/wiki/Magnolia_grandiflora",
+   "https://en.wikipedia.org/wiki/Magnolia",
+   "https://ru.wikipedia.org/wiki/Магнолия_крупноцветковая",
+   "https://data.buenosaires.gob.ar/dataset/arbolado-espacios-verdes"
+  ]
+ },
+ {
+  "id": "sauce_lloron",
+  "scientific": "Salix babylonica",
+  "es": "sauce llorón",
+  "es_article": "el",
+  "ru": "ива вавилонская (плакучая ива)",
+  "kind": "árbol",
+  "origin": "introduced",
+  "origin_ru": "Родом из Китая. По Великому шёлковому пути её давно привезли в Западную Азию и Европу.",
+  "fact_ru": "Её зовут «вавилонской», но она из Китая. Линней ошибся: решил, что это ива из старой песни о Вавилоне.",
+  "fact_es": "Le dicen «de Babilonia», pero es de China. Un botánico se confundió.",
+  "when_to_find": "весной (сентябрь) светло-зелёные листья, осенью (апрель–май) золотисто-жёлтые",
+  "look_for_ru": "Длинные тонкие ветки свисают до земли; узкие листья; часто у воды.",
+  "safety": "ok",
+  "safety_ru": "",
+  "sources": [
+   "https://en.wikipedia.org/wiki/Salix_babylonica",
+   "https://ru.wikipedia.org/wiki/Ива_вавилонская",
+   "https://data.buenosaires.gob.ar/dataset/arbolado-publico-lineal"
+  ]
+ },
+ {
+  "id": "palmera_canaria",
+  "scientific": "Phoenix canariensis",
+  "es": "palmera canaria",
+  "es_article": "la",
+  "ru": "финик канарский (канарская финиковая пальма)",
+  "kind": "palmera",
+  "origin": "introduced",
+  "origin_ru": "Родом с Канарских островов в Атлантическом океане, у берегов Африки.",
+  "fact_ru": "Эта пальма — символ Канарских островов, вместе с птичкой канарейкой. В Аргентине её сажают очень часто.",
+  "fact_es": "Es el símbolo de las Islas Canarias, junto con el pajarito canario.",
+  "when_to_find": "зелёная круглый год; гроздья оранжевых плодов",
+  "look_for_ru": "Толстый ствол в ромбиках, как ананас; огромные перистые листья.",
+  "safety": "dont_touch",
+  "safety_ru": "У основания листьев длинные острые колючки. Не подходи близко и не трогай.",
+  "sources": [
+   "https://en.wikipedia.org/wiki/Phoenix_canariensis",
+   "https://ru.wikipedia.org/wiki/Финик_канарский",
+   "https://plants.ces.ncsu.edu/plants/phoenix-canariensis/",
+   "https://data.buenosaires.gob.ar/dataset/arbolado-espacios-verdes"
+  ]
+ },
+ {
+  "id": "naranjo_amargo",
+  "scientific": "Citrus × aurantium",
+  "es": "naranjo amargo",
+  "es_article": "el",
+  "ru": "померанец (горький апельсин)",
+  "kind": "árbol",
+  "origin": "introduced",
+  "origin_ru": "Родом из Юго-Восточной Азии. В дикой природе его не находили: это гибрид мандарина и помело.",
+  "fact_ru": "Померанец может прожить до 600 лет! Его апельсины очень горькие и кислые.",
+  "fact_es": "El naranjo amargo puede vivir hasta 600 años. Sus naranjas son muy amargas.",
+  "when_to_find": "цветёт весной (белые душистые цветы); оранжевые плоды висят зимой",
+  "look_for_ru": "Блестящие листья с «крылышками» на черешке; колючки; оранжевые плоды.",
+  "safety": "dont_touch",
+  "safety_ru": "На ветках острые колючки. Плоды не ешь: они очень горькие.",
+  "sources": [
+   "https://en.wikipedia.org/wiki/Bitter_orange",
+   "https://ru.wikipedia.org/wiki/Померанец",
+   "https://plants.ces.ncsu.edu/plants/citrus-x-aurantium/",
+   "https://data.buenosaires.gob.ar/dataset/arbolado-publico-lineal"
+  ]
+ },
+ {
+  "id": "mburucuya",
+  "scientific": "Passiflora caerulea",
+  "es": "mburucuyá",
+  "es_article": "el",
+  "ru": "страстоцвет голубой",
+  "kind": "trepadora",
+  "origin": "native_ar",
+  "origin_ru": "Растёт дико в Аргентине и соседних странах. Слово «мбурукуя» — из языка гуарани.",
+  "fact_ru": "Люди увидели в цветке знаки из истории о Христе: корона похожа на терновый венец, а три рыльца — на гвозди.",
+  "fact_es": "Su corona parece una corona de espinas y sus tres estigmas, clavos. Por eso es «flor de la pasión».",
+  "when_to_find": "цветёт и даёт плоды с сентября по июнь; плоды оранжевые, похожи на яйцо",
+  "look_for_ru": "Лиана с усиками, листья-«ладошки», бело-голубой цветок с бахромой",
+  "safety": "dont_eat",
+  "safety_ru": "Не ешь листья и зелёные плоды: в листьях есть ядовитые вещества.",
+  "sources": [
+   "https://es.wikipedia.org/wiki/Passiflora_caerulea",
+   "https://en.wikipedia.org/wiki/Passiflora_caerulea",
+   "https://buenosaires.gob.ar/educacion/ministerio-sustentable/conoce-las-especies-nativas-del-ministerio",
+   "https://www.lanacion.com.ar/sociedad/cinco-flores-nativas-de-argentinas-y-sus-aliados-para-colorear-nid21092025/",
+   "https://ru.wikipedia.org/wiki/Страстоцвет_голубой"
+  ]
+ },
+ {
+  "id": "santa_rita",
+  "scientific": "Bougainvillea glabra",
+  "also_matches": [
+   "Bougainvillea spectabilis",
+   "Bougainvillea"
+  ],
+  "es": "Santa Rita",
+  "es_article": "la",
+  "ru": "бугенвиллея голая",
+  "kind": "trepadora",
+  "origin": "native_region",
+  "origin_ru": "Родом из Бразилии. Её нашёл французский учёный Коммерсон во время кругосветного плавания капитана Бугенвиля.",
+  "fact_ru": "Яркие «лепестки» — на самом деле листья-прицветники. Настоящие цветки — три маленькие белые звёздочки в середине.",
+  "fact_es": "Lo colorido no son pétalos: son hojas. Las flores de verdad son tres estrellitas blancas del medio.",
+  "when_to_find": "цветёт весной и летом (сентябрь–февраль); яркие «бумажные» цветы держатся долго",
+  "look_for_ru": "Яркие бумажные «цветы» — фиолетовые, розовые, красные; колючие ветки на стенах",
+  "safety": "dont_touch",
+  "safety_ru": "На ветках колючки, а сок может вызвать сыпь на коже.",
+  "sources": [
+   "https://bichosdecampo.com/de-raiz-secretos-para-cuidar-bien-de-una-santa-rita-una-planta-popular-y-deseada-por-todos",
+   "https://www.lanacion.com.ar/propiedades/santa-rita-arbusto-versatil-y-ubicable-nid1443971",
+   "https://en.wikipedia.org/wiki/Bougainvillea",
+   "https://en.wikipedia.org/wiki/Bougainvillea_glabra",
+   "https://ru.wikipedia.org/wiki/Бугенвиллея"
+  ]
+ },
+ {
+  "id": "laurel_de_jardin",
+  "scientific": "Nerium oleander",
+  "es": "laurel de jardín",
+  "es_article": "el",
+  "ru": "олеандр обыкновенный",
+  "kind": "arbusto",
+  "origin": "introduced",
+  "origin_ru": "Родом из стран вокруг Средиземного моря и из Южной Азии. Сюда его привезли люди как садовое растение.",
+  "fact_ru": "Олеандр — официальный цветок японского города Хиросима: он первым зацвёл там после атомной бомбы 1945 года.",
+  "fact_es": "Es la flor oficial de Hiroshima, en Japón: fue la primera en florecer después de la bomba de 1945.",
+  "when_to_find": "цветёт с конца весны до осени (примерно ноябрь–апрель)",
+  "look_for_ru": "Узкие жёсткие листья, розовые, белые или красные цветы букетиками",
+  "safety": "dont_touch",
+  "safety_ru": "Очень ядовит! Не трогай и не бери в рот ни листья, ни цветы. Даже дым от него ядовит.",
+  "sources": [
+   "https://www.lanacion.com.ar/propiedades/bellas-pero-toxicas-nid1051241",
+   "https://www.rionegro.com.ar/en-casa/jardin-laurel-de-flor-tan-hermosa-como-peligrosa-2319995/",
+   "https://es.wikipedia.org/wiki/Nerium_oleander",
+   "https://en.wikipedia.org/wiki/Nerium"
+  ]
+ },
+ {
+  "id": "floripondio",
+  "scientific": "Brugmansia suaveolens",
+  "also_matches": [
+   "Brugmansia arborea",
+   "Brugmansia insignis",
+   "Brugmansia"
+  ],
+  "es": "floripondio",
+  "es_article": "el",
+  "ru": "бругмансия душистая",
+  "ru_note": "перевод латинского названия; отдельного устоявшегося русского названия вида нет (род — бругмансия)",
+  "kind": "arbusto",
+  "origin": "native_region",
+  "origin_ru": "Родом из Южной Америки, с юго-востока Бразилии. Её сажают в садах из-за огромных душистых цветов.",
+  "fact_ru": "Все виды бругмансий исчезли в дикой природе. Их можно встретить только в садах у людей.",
+  "fact_es": "Todas las especies de floripondio desaparecieron de la naturaleza: solo viven en jardines.",
+  "when_to_find": "цветёт с конца весны до осени; вечером и рано утром пахнет сильнее",
+  "look_for_ru": "Огромные белые цветы-трубы висят вниз, длиной почти с линейку",
+  "safety": "dont_touch",
+  "safety_ru": "Очень ядовит! Не трогай. Если коснулся — вымой руки и не три глаза.",
+  "sources": [
+   "https://en.wikipedia.org/wiki/Brugmansia",
+   "https://en.wikipedia.org/wiki/Brugmansia_suaveolens",
+   "https://www.lanacion.com.ar/sociedad/alertan-sobre-una-planta-toxica-nid15023",
+   "https://revistas.unne.edu.ar/index.php/vet/article/download/2545/2251",
+   "https://ru.wikipedia.org/wiki/Бругмансия"
+  ]
+ },
+ {
+  "id": "ricino",
+  "scientific": "Ricinus communis",
+  "es": "ricino (tártago)",
+  "es_article": "el",
+  "ru": "клещевина обыкновенная",
+  "kind": "arbusto",
+  "origin": "introduced",
+  "origin_ru": "Родом из Африки, из краёв возле Эфиопии. Теперь она растёт во многих тёплых странах.",
+  "fact_ru": "Её семена похожи на клещей. Поэтому по-латыни она «рицинус» — «клещ», а по-русски — клещевина.",
+  "fact_es": "Sus semillas parecen garrapatas. Por eso su nombre en latín, Ricinus, quiere decir «garrapata».",
+  "when_to_find": "цветёт почти круглый год; рядом — колючие коробочки с семенами",
+  "look_for_ru": "Большие резные листья, как ладонь; колючие шарики-коробочки",
+  "safety": "dont_touch",
+  "safety_ru": "Очень ядовита! Семена смертельно опасны. Сок может вызвать сыпь.",
+  "sources": [
+   "https://es.wikipedia.org/wiki/Ricinus_communis",
+   "https://en.wikipedia.org/wiki/Castor_bean",
+   "https://ru.wikipedia.org/wiki/Клещевина",
+   "https://www.engormix.com/agricultura/miscellaneous/produccion-tartago-variedades-cosecha_f16728/"
+  ]
+ },
+ {
+  "id": "lantana",
+  "scientific": "Lantana camara",
+  "es": "lantana",
+  "es_article": "la",
+  "ru": "лантана камара",
+  "kind": "arbusto",
+  "origin": "native_ar",
+  "origin_ru": "Дико растёт в тропической Америке, в том числе в Аргентине. В других странах она стала опасным сорняком.",
+  "fact_ru": "Её цветки меняют цвет после опыления, например с жёлтого на красный. Так они подсказывают насекомым, где ещё есть нектар.",
+  "fact_es": "Sus florcitas cambian de color con el tiempo. Así les avisan a los bichos dónde todavía hay néctar.",
+  "when_to_find": "цветёт с весны до первых холодов (примерно сентябрь–май)",
+  "look_for_ru": "Пёстрые шарики-соцветия: жёлтые, оранжевые, розовые цветки вместе",
+  "safety": "dont_touch",
+  "safety_ru": "Не ешь ягоды, особенно зелёные. Листья могут раздражать кожу.",
+  "sources": [
+   "https://buenosaires.gob.ar/educacion/ministerio-sustentable/conoce-las-especies-nativas-del-ministerio",
+   "https://es.wikipedia.org/wiki/Lantana_camara",
+   "https://en.wikipedia.org/wiki/Lantana_camara",
+   "https://www.inaturalist.org/taxa/50333"
+  ]
+ },
+ {
+  "id": "rosa_china",
+  "scientific": "Hibiscus rosa-sinensis",
+  "also_matches": [
+   "Hibiscus × rosa-sinensis"
+  ],
+  "es": "rosa china",
+  "es_article": "la",
+  "ru": "гибискус китайский (китайская роза)",
+  "kind": "arbusto",
+  "origin": "introduced",
+  "origin_ru": "Это садовое растение: в дикой природе его не находят. Скорее всего, оно появилось в тёплых странах Азии или на островах Тихого океана.",
+  "fact_ru": "Это национальный цветок Малайзии. Пять лепестков там означают пять главных правил страны.",
+  "fact_es": "Es la flor nacional de Malasia. Sus cinco pétalos representan cinco principios del país.",
+  "when_to_find": "цветёт летом, сильнее всего в самую жару (декабрь–февраль)",
+  "look_for_ru": "Огромный яркий цветок шире ладони, пять лепестков, блестящие листья",
+  "safety": "ok",
+  "safety_ru": "",
+  "sources": [
+   "https://www.airedesantafe.com.ar/estilo-vida/la-planta-que-ilumina-el-jardin-flores-enormes-verano-y-casi-no-necesita-cuidados-n636889",
+   "https://en.wikipedia.org/wiki/Hibiscus_rosa-sinensis",
+   "https://ru.wikipedia.org/wiki/Гибискус_китайский"
+  ]
+ },
+ {
+  "id": "rosa",
+  "scientific": "Rosa",
+  "es": "rosa",
+  "es_article": "la",
+  "ru": "роза",
+  "kind": "arbusto",
+  "origin": "introduced",
+  "origin_ru": "Большинство диких роз — из Азии. Садовые розы — гибриды, их вывели люди.",
+  "fact_ru": "Колючки розы ботаники не считают настоящими шипами: это просто выросты кожицы стебля.",
+  "fact_es": "Las «espinas» de la rosa no son espinas de verdad: son pinchitos de la piel del tallo.",
+  "when_to_find": "лучше всего цветёт с сентября по ноябрь — например, в Розарии Палермо",
+  "look_for_ru": "Цветы с множеством лепестков, колючий стебель, зубчатые листочки",
+  "safety": "dont_touch",
+  "safety_ru": "Осторожно, колючки!",
+  "sources": [
+   "https://bichosdecampo.com/de-raiz-recorrida-por-el-rosedal-de-palermo-justo-en-el-mejor-momento-del-ano-para-visitarlo",
+   "https://buenosaires.gob.ar/noticias/se-cumplen-110-anos-del-rosedal-de-palermo",
+   "https://en.wikipedia.org/wiki/Rose",
+   "https://es.wikipedia.org/wiki/Rosa"
+  ]
+ },
+ {
+  "id": "agapanto",
+  "scientific": "Agapanthus praecox",
+  "es": "agapanto",
+  "es_article": "el",
+  "ru": "агапантус ранний",
+  "kind": "flor",
+  "origin": "introduced",
+  "origin_ru": "Родом из Южной Африки. Его сажают на клумбах, в парках и вдоль улиц.",
+  "fact_ru": "Его имя по-гречески значит «цветок любви». А ещё его зовут «нильской лилией», хотя он не из Египта, а из Южной Африки.",
+  "fact_es": "Su nombre en griego quiere decir «flor del amor». Viene de Sudáfrica.",
+  "when_to_find": "цветёт с декабря по февраль (голубые или белые шары цветов)",
+  "look_for_ru": "Высокий стебель с голубым шаром цветков, длинные листья-ремни",
+  "safety": "dont_touch",
+  "safety_ru": "Сок может жечь кожу и рот. Не ломай и не ешь.",
+  "sources": [
+   "https://www.lanacion.com.ar/lifestyle/jacarandas-agapantos-otras-especies-tinen-noviembre-azules-nid2515924/",
+   "https://es.wikipedia.org/wiki/Agapanthus_praecox",
+   "https://en.wikipedia.org/wiki/Agapanthus_praecox",
+   "https://poisonousplants.massey.ac.nz/data/agapanthus/agapanthus.html",
+   "https://ru.wikipedia.org/wiki/Агапантус"
+  ]
+ },
+ {
+  "id": "malvon",
+  "scientific": "Pelargonium × hybridum",
+  "also_matches": [
+   "Pelargonium × hortorum"
+  ],
+  "es": "malvón",
+  "es_article": "el",
+  "ru": "пеларгония (герань)",
+  "kind": "flor",
+  "origin": "introduced",
+  "origin_ru": "Родом из Южной Африки. Первого её дикого предка собрали там больше 300 лет назад.",
+  "fact_ru": "Её научное имя — от греческого «пеларгос», то есть «аист»: плод похож на клюв аиста.",
+  "fact_es": "Su nombre viene de la palabra griega para «cigüeña»: su fruto parece un pico de cigüeña.",
+  "when_to_find": "цветёт весной и особенно обильно летом",
+  "look_for_ru": "Круглые листья с тёмным кольцом-подковой, шапки красных или розовых цветов",
+  "safety": "dont_eat",
+  "safety_ru": "Не ешь. Ядовит для кошек и собак.",
+  "sources": [
+   "https://ecoregistros.org/site_en/imagen.php?id=450101",
+   "https://en.wikipedia.org/wiki/Pelargonium_×_hortorum",
+   "https://en.wikipedia.org/wiki/Pelargonium",
+   "https://ru.wikipedia.org/wiki/Пеларгония_зональная"
+  ]
+ },
+ {
+  "id": "hortensia",
+  "scientific": "Hydrangea macrophylla",
+  "es": "hortensia",
+  "es_article": "la",
+  "ru": "гортензия крупнолистная",
+  "kind": "arbusto",
+  "origin": "introduced",
+  "origin_ru": "Родом из Японии.",
+  "fact_ru": "Цвет зависит от земли: в кислой почве цветы голубые, а в щелочной — розовые.",
+  "fact_es": "En tierra ácida sus flores salen celestes y en tierra alcalina, rosadas.",
+  "when_to_find": "цветёт с весны до поздней осени, больше всего летом",
+  "look_for_ru": "Большие шары цветов — голубые, розовые или белые; крупные листья",
+  "safety": "dont_eat",
+  "safety_ru": "Не ешь листья и цветы — они ядовиты.",
+  "sources": [
+   "https://www.lanacion.com.ar/lifestyle/por-que-las-hortensias-cambian-de-color-y-que-tan-grande-puede-ser-esta-planta-de-jardin-nid04102024/",
+   "https://www.sitioandino.com.ar/jardineria-las-plantas-venenosas-que-podrias-tener-el-jardin-saberlo-n5676825",
+   "https://en.wikipedia.org/wiki/Hydrangea_macrophylla",
+   "https://plants.ces.ncsu.edu/plants/hydrangea-macrophylla/",
+   "https://ru.wikipedia.org/wiki/Гортензия_крупнолистная"
+  ]
+ },
+ {
+  "id": "azalea",
+  "scientific": "Rhododendron indicum",
+  "also_matches": [
+   "Rhododendron simsii"
+  ],
+  "es": "azalea",
+  "es_article": "la",
+  "ru": "азалия",
+  "kind": "arbusto",
+  "origin": "introduced",
+  "origin_ru": "Родом из Японии. В Европу азалии попали в XVIII веке, а потом и в Аргентину.",
+  "fact_ru": "В Китае азалию называют «кустом, который заставляет думать о доме».",
+  "fact_es": "En China a la azalea le dicen «el arbusto que hace pensar en casa».",
+  "when_to_find": "цветёт весной, в октябре–ноябре",
+  "look_for_ru": "Низкий куст, весь усыпанный розовыми, красными или белыми цветами-воронками",
+  "safety": "dont_eat",
+  "safety_ru": "Все части ядовиты. Не ешь листья и цветы, не соси нектар.",
+  "sources": [
+   "https://bichosdecampo.com/de-raiz-en-plena-temporada-de-azaleas-algunos-consejos-para-cuidarlas-y-disfrutar-de-sus-llamativas-flores/",
+   "https://www.sitioandino.com.ar/jardineria-las-plantas-venenosas-que-podrias-tener-el-jardin-saberlo-n5676825",
+   "https://en.wikipedia.org/wiki/Azalea",
+   "https://en.wikipedia.org/wiki/Rhododendron_indicum",
+   "https://plants.ces.ncsu.edu/plants/rhododendron-indicum/"
+  ]
+ },
+ {
+  "id": "madreselva",
+  "scientific": "Lonicera japonica",
+  "es": "madreselva",
+  "es_article": "la",
+  "ru": "жимолость японская",
+  "kind": "trepadora",
+  "origin": "introduced",
+  "origin_ru": "Родом из Восточной Азии. Здесь она сбежала из садов и разрослась в прибрежных лесах.",
+  "fact_ru": "Цветки раскрываются белыми, а потом желтеют. Поэтому в Китае её зовут «золото-серебряным цветком».",
+  "fact_es": "Sus flores abren blancas y después se ponen amarillas. En China la llaman «flor de oro y plata».",
+  "when_to_find": "цветёт летом и очень сладко пахнет; осенью — тёмные ягоды",
+  "look_for_ru": "Вьюн с бело-жёлтыми цветками-трубочками парами, сладкий запах",
+  "safety": "dont_eat",
+  "safety_ru": "Не ешь ягоды — они могут быть ядовиты.",
+  "sources": [
+   "https://florabonaerense.blogspot.com/2013/09/madreselva-lonicera-japonica.html",
+   "https://es.wikipedia.org/wiki/Lonicera_japonica",
+   "https://en.wikipedia.org/wiki/Lonicera_japonica",
+   "https://ru.wikipedia.org/wiki/Виды_рода_Жимолость"
+  ]
+ },
+ {
+  "id": "hiedra",
+  "scientific": "Hedera helix",
+  "es": "hiedra",
+  "es_article": "la",
+  "ru": "плющ обыкновенный",
+  "kind": "trepadora",
+  "origin": "introduced",
+  "origin_ru": "Родом из Европы и Западной Азии. Сюда его привезли люди как садовое растение.",
+  "fact_ru": "У плюща два вида листьев: молодые ветки с лопастями лазят по стенам, а цветут только взрослые ветки с цельными листьями.",
+  "fact_es": "Tiene dos tipos de hojas: las ramas jóvenes trepan y solo las ramas adultas dan flores.",
+  "when_to_find": "цветёт в конце лета и осенью; его цветы — важная еда для пчёл",
+  "look_for_ru": "Вечнозелёная лиана на стенах, листья с 3–5 лопастями, цепкие корешки",
+  "safety": "dont_touch",
+  "safety_ru": "Ягоды ядовиты. Листья у некоторых людей вызывают сыпь.",
+  "sources": [
+   "https://www.sitioandino.com.ar/jardineria-las-plantas-venenosas-que-podrias-tener-el-jardin-saberlo-n5676825",
+   "https://en.wikipedia.org/wiki/Hedera_helix",
+   "https://ru.wikipedia.org/wiki/Плющ_обыкновенный"
+  ]
+ },
+ {
+  "id": "diente_de_leon",
+  "scientific": "Taraxacum officinale",
+  "es": "diente de león",
+  "es_article": "el",
+  "ru": "одуванчик лекарственный",
+  "kind": "flor",
+  "origin": "introduced",
+  "origin_ru": "Он родом из Европы и Азии, а в Америку его когда-то привезли люди как огородное растение.",
+  "fact_ru": "Каждая пушинка одуванчика — это семечко со своим парашютиком. Ветер может унести его на несколько сотен метров!",
+  "fact_es": "Cada pelusita es una semilla con paracaídas. ¡El viento la puede llevar a cientos de metros!",
+  "when_to_find": "жёлтые цветы и пушистые шарики почти круглый год, больше всего весной (сентябрь–ноябрь)",
+  "look_for_ru": "жёлтый цветок на полом стебле, зубчатые листья розеткой, белый пушистый шар",
+  "safety": "ok",
+  "safety_ru": "",
+  "sources": [
+   "https://es.wikipedia.org/wiki/Taraxacum_officinale",
+   "https://en.wikipedia.org/wiki/Taraxacum_officinale",
+   "https://ecoregistros.org/site_en/imagen.php?id=491838"
+  ]
+ },
+ {
+  "id": "trebol_blanco",
+  "scientific": "Trifolium repens",
+  "es": "trébol blanco",
+  "es_article": "el",
+  "ru": "клевер ползучий (белый клевер)",
+  "kind": "hierba",
+  "origin": "introduced",
+  "origin_ru": "Он родом из Европы и Азии, его привезли в Америку как корм для коров и овец.",
+  "fact_ru": "Клевер сам удобряет землю: на его корнях живут крошечные бактерии, которые берут азот прямо из воздуха.",
+  "fact_es": "El trébol abona la tierra solo: toma nitrógeno del aire con ayuda de bacterias en sus raíces.",
+  "when_to_find": "листья круглый год; белые шарики-цветы весной и летом (октябрь–февраль)",
+  "look_for_ru": "три круглых листочка со светлой полоской, белые цветы-шарики, ползучие стебли",
+  "safety": "ok",
+  "safety_ru": "",
+  "sources": [
+   "https://en.wikipedia.org/wiki/Trifolium_repens",
+   "https://www.losandes.com.ar/por-las-redes/no-lo-retires-el-trebol-el-jardin-tiene-beneficios-el-suelo-e-insectos-n5972253"
+  ]
+ },
+ {
+  "id": "cortadera",
+  "scientific": "Cortaderia selloana",
+  "es": "cortadera",
+  "es_article": "la",
+  "ru": "кортадерия Селло (пампасная трава)",
+  "kind": "hierba",
+  "origin": "native_ar",
+  "origin_ru": "Это местная трава аргентинской пампы, она растёт здесь испокон веков.",
+  "fact_ru": "Её название идёт от испанского слова «cortar» — «резать». Края её длинных листьев острые, как пила!",
+  "fact_es": "Su nombre viene de «cortar»: los bordes de sus hojas son filosos como una sierra.",
+  "when_to_find": "огромные кусты круглый год; белые пушистые метёлки с конца лета до осени (февраль–апрель)",
+  "look_for_ru": "огромный куст длинных листьев, высокие белые или розоватые пушистые метёлки",
+  "safety": "dont_touch",
+  "safety_ru": "Края листьев режут кожу, как бумага или нож. Не хватайся за листья руками.",
+  "sources": [
+   "https://es.wikipedia.org/wiki/Cortaderia_selloana",
+   "https://es.wikipedia.org/wiki/Reserva_ecol%C3%B3gica_Costanera_Sur",
+   "https://www.lanacion.com.ar/lifestyle/las-plantas-nativas-flores-mas-lindas-nid2246873/"
+  ]
+ },
+ {
+  "id": "helecho_serrucho",
+  "scientific": "Nephrolepis cordifolia",
+  "es": "helecho serrucho",
+  "es_article": "el",
+  "ru": "нефролепис сердцелистный",
+  "kind": "hierba",
+  "origin": "introduced",
+  "origin_ru": "Он родом из тропической Азии и Австралии; его сажали в садах и горшках, а потом он сам «сбежал» на улицы.",
+  "fact_ru": "У этого папоротника под землёй растут маленькие клубеньки, похожие на крошечные картофелины. Из них вырастают новые папоротники.",
+  "fact_es": "Bajo tierra tiene bolitas como papitas chiquitas. De ellas nacen helechos nuevos.",
+  "when_to_find": "зелёный круглый год: в тенистых садах, на старых стенах и у заборов",
+  "look_for_ru": "длинные прямые листья-«пёрышки» с мелкими зубчатыми листочками в два ряда",
+  "safety": "ok",
+  "safety_ru": "",
+  "sources": [
+   "https://en.wikipedia.org/wiki/Nephrolepis_cordifolia",
+   "https://ecoregistros.org/site_en/imagen.php?id=492144"
+  ]
+ },
+ {
+  "id": "camalote",
+  "scientific": "Pontederia crassipes",
+  "also_matches": [
+   "Eichhornia crassipes"
+  ],
+  "es": "camalote",
+  "es_article": "el",
+  "ru": "водяной гиацинт (эйхорния)",
+  "kind": "flor",
+  "origin": "native_ar",
+  "origin_ru": "Это местное растение рек Парана и Ла-Плата; иногда большие «острова» камалотов приплывают по реке к Буэнос-Айресу.",
+  "fact_ru": "Черешки его листьев раздуты и полны воздуха, как поплавки. Поэтому камалот плавает по воде и не тонет!",
+  "fact_es": "Sus tallitos están inflados con aire, como flotadores. ¡Por eso el camalote flota!",
+  "when_to_find": "плавает в лагунах и у берега; больше всего его летом (декабрь–февраль), сиреневые цветы — в тёплое время",
+  "look_for_ru": "плавающие блестящие листья с раздутыми черешками, сиреневые цветы с жёлтым пятном",
+  "safety": "ok",
+  "safety_ru": "",
+  "sources": [
+   "https://es.wikipedia.org/wiki/Pontederia_crassipes",
+   "https://www.lanacion.com.ar/buenos-aires/invasion-verde-el-dia-en-que-el-rio-de-la-plata-se-poblo-de-camalotes-nid1863581",
+   "https://exa.unne.edu.ar/biologia/diversidadv/documentos/ANGIOSPERMAS/Monocotiled%F3neas/8-Commelinedes/2-Commelinales/2-Pontederiaceae.pdf"
+  ]
+ },
+ {
+  "id": "ortiga",
+  "scientific": "Urtica urens",
+  "es": "ortiga",
+  "es_article": "la",
+  "ru": "крапива жгучая",
+  "kind": "hierba",
+  "origin": "introduced",
+  "origin_ru": "Она родом из Европы и Азии, и люди случайно разнесли её почти по всему миру.",
+  "fact_ru": "Каждый жгучий волосок — как крошечный шприц. Его кончик ломается и впрыскивает в кожу жгучий сок.",
+  "fact_es": "Cada pelito es como una jeringa chiquita: la punta se rompe y te pica.",
+  "when_to_find": "чаще всего в прохладное время года (осень–весна), на пустырях, в огородах и клумбах",
+  "look_for_ru": "зубчатые листья с жгучими волосками, мелкие зелёные цветочки у листьев",
+  "safety": "dont_touch",
+  "safety_ru": "Жжётся! Волоски вызывают жжение и красные пятна. Не трогай, а если обжёгся — промой кожу водой с мылом.",
+  "sources": [
+   "https://en.wikipedia.org/wiki/Urtica_urens",
+   "https://en.wikipedia.org/wiki/Urtica_dioica",
+   "https://www.ecoregistros.org/sheet/Urtica-urens?idpais=2"
+  ]
+ },
+ {
+  "id": "flor_de_santa_lucia",
+  "scientific": "Commelina erecta",
+  "es": "flor de Santa Lucía",
+  "es_article": "la",
+  "ru": "коммелина прямостоячая",
+  "kind": "flor",
+  "origin": "native_ar",
+  "origin_ru": "Это местный дикий цветок Аргентины, он растёт здесь сам по себе.",
+  "fact_ru": "Каждый её голубой цветок живёт всего один день! Зато потом раскрываются новые бутоны.",
+  "fact_es": "¡Cada flor dura un solo día! Pero después se abren flores nuevas.",
+  "when_to_find": "цветёт в тёплое время года, с весны до осени; цветы раскрыты утром",
+  "look_for_ru": "два больших голубых лепестка и один маленький белый внизу",
+  "safety": "ok",
+  "safety_ru": "",
+  "sources": [
+   "https://en.wikipedia.org/wiki/Commelina_erecta",
+   "https://ecoregistros.org/site_en/imagen.php?id=451501"
+  ]
+ },
+ {
+  "id": "verbena",
+  "scientific": "Verbena bonariensis",
+  "es": "verbena",
+  "es_article": "la",
+  "ru": "вербена буэнос-айресская",
+  "kind": "flor",
+  "origin": "native_ar",
+  "origin_ru": "Это местный цветок Южной Америки, он растёт в Аргентине, Уругвае, Парагвае и Бразилии.",
+  "fact_ru": "Её латинское имя «bonariensis» значит «из Буэнос-Айреса». Этот цветок назван в честь твоего города!",
+  "fact_es": "Su nombre científico, «bonariensis», quiere decir «de Buenos Aires». ¡Lleva el nombre de tu ciudad!",
+  "when_to_find": "цветёт летом и осенью (декабрь–апрель), её любят бабочки",
+  "look_for_ru": "высокие тонкие стебли, на макушке маленькие сиреневые цветочки пучком",
+  "safety": "ok",
+  "safety_ru": "",
+  "sources": [
+   "https://es.wikipedia.org/wiki/Verbena_bonariensis",
+   "https://www.lanacion.com.ar/lifestyle/las-plantas-nativas-flores-mas-lindas-nid2246873/",
+   "https://plantarium.ru/lang/en/page/prev/for/175057.html"
+  ]
+ },
+ {
+  "id": "cardo",
+  "scientific": "Cynara cardunculus",
+  "es": "cardo de Castilla",
+  "es_article": "el",
+  "ru": "кардон (артишок испанский)",
+  "kind": "hierba",
+  "origin": "introduced",
+  "origin_ru": "Он родом из Средиземноморья; его привезли европейцы, и он разросся по всей пампе.",
+  "fact_ru": "Чарльз Дарвин видел у Ла-Платы огромные заросли кардона. Он писал, что кардон высотой со спину лошади!",
+  "fact_es": "Darwin vio cardos en el Río de la Plata ¡tan altos como el lomo de un caballo!",
+  "when_to_find": "колючие листья круглый год; фиолетовые цветы-шары летом",
+  "look_for_ru": "большие колючие серебристые листья, фиолетовая головка, как у артишока",
+  "safety": "dont_touch",
+  "safety_ru": "Очень колючий! Острые шипы на листьях и цветах. Не трогай руками.",
+  "sources": [
+   "https://en.wikipedia.org/wiki/Cardoon",
+   "https://repositorio.uca.edu.ar/bitstream/123456789/308/1/doc.pdf",
+   "https://luk.staff.ugm.ac.id/kmi/iptek/Darwin/Beagle/Chapter8.html",
+   "https://ru.wikipedia.org/wiki/Артишок_испанский"
+  ]
+ },
+ {
+  "id": "vinagrillo_rosado",
+  "scientific": "Oxalis articulata",
+  "es": "vinagrillo rosado",
+  "es_article": "el",
+  "ru": "кислица членистая",
+  "kind": "flor",
+  "origin": "native_ar",
+  "origin_ru": "Это местный цветок севера Аргентины, Уругвая и юга Бразилии.",
+  "fact_ru": "Когда солнце прячется, её розовые цветы сворачиваются в трубочку, а на солнце снова раскрываются.",
+  "fact_es": "Cuando no hay sol, sus flores rosadas se enrollan como un tubito.",
+  "when_to_find": "цветёт всё тёплое время года, с весны до первых заморозков",
+  "look_for_ru": "листья как у клевера, из трёх сердечек; розовые цветы с пятью лепестками",
+  "safety": "dont_eat",
+  "safety_ru": "Не ешь! В листьях есть щавелевая кислота, она вредна, если съесть много.",
+  "sources": [
+   "https://en.wikipedia.org/wiki/Oxalis_articulata",
+   "https://ecoregistros.org/site_en/imagen.php?id=461645",
+   "https://plantarium.ru/lang/en/page/image/id/815380.html"
+  ]
+ },
+ {
+  "id": "junco",
+  "scientific": "Schoenoplectus californicus",
+  "es": "junco",
+  "es_article": "el",
+  "ru": "схеноплектус калифорнийский (тотора)",
+  "kind": "hierba",
+  "origin": "native_ar",
+  "origin_ru": "Это местное растение болот и лагун Аргентины; оно растёт в лагунах Экологического заповедника Костанера-Сур.",
+  "fact_ru": "Эти заросли — дом для птиц! Учёные в провинции Санта-Фе нашли в них гнёзда 21 вида птиц.",
+  "fact_es": "¡El junco es casa de aves! En Santa Fe encontraron nidos de 21 especies.",
+  "when_to_find": "зелёные заросли круглый год; рыжие колоски весной и летом",
+  "look_for_ru": "высокие гладкие тёмно-зелёные стебли в воде, без листьев, рыжие колоски сбоку",
+  "safety": "ok",
+  "safety_ru": "",
+  "sources": [
+   "https://es.wikipedia.org/wiki/Schoenoplectus_californicus",
+   "https://es.wikipedia.org/wiki/Reserva_ecol%C3%B3gica_Costanera_Sur",
+   "https://www.fcv.unl.edu.ar/aves/wp-content/uploads/sites/16/2020/06/Schoenoplectus-californicus.pdf",
+   "https://www.ufrgs.br/floracampestre/schoenoplectus-californicus/"
+  ]
+ },
+ {
+  "id": "llanten",
+  "scientific": "Plantago major",
+  "es": "llantén",
+  "es_article": "el",
+  "ru": "подорожник большой",
+  "kind": "hierba",
+  "origin": "introduced",
+  "origin_ru": "Он родом из Европы и Азии и разошёлся по свету вместе с людьми.",
+  "fact_ru": "Индейцы Северной Америки называли его «след белого человека»: он вырастал там, где ходили приезжие европейцы.",
+  "fact_es": "En Norteamérica lo llamaban «huella del hombre blanco»: crecía donde pisaban los europeos.",
+  "when_to_find": "листья круглый год; тонкие колоски с семенами весной и летом",
+  "look_for_ru": "широкие листья розеткой у земли с толстыми продольными жилками, тонкий колосок",
+  "safety": "ok",
+  "safety_ru": "",
+  "sources": [
+   "https://en.wikipedia.org/wiki/Plantago_major",
+   "https://www.lanacion.com.ar/lifestyle/en-las-redes/la-planta-que-muchos-confunden-como-maleza-pero-que-ofrece-multiples-beneficios-para-la-salud-nid01112023/"
+  ]
+ }
+]

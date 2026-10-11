@@ -1,4 +1,7 @@
+import 'dart:io';
+
 import 'package:flutter/foundation.dart';
+import 'package:path_provider/path_provider.dart';
 
 import '../ai/brain.dart';
 import '../app.dart';
@@ -51,4 +54,24 @@ Future<void> runSelfTest() async {
   );
   log('translate ${sw.elapsedMilliseconds - t}ms: "$ru"');
   log('DONE');
+}
+
+/// Run with --dart-define=PLANT_TEST=true after copying photos into the app's
+/// Documents/plant_test folder. Prints the top 3 per photo, to compare with
+/// the Python evaluation on the same images.
+Future<void> runPlantTest() async {
+  final docs = await getApplicationDocumentsDirectory();
+  final dir = Directory('${docs.path}/plant_test');
+  if (!dir.existsSync()) return;
+  final files = dir.listSync().whereType<File>().toList()
+    ..sort((a, b) => a.path.compareTo(b.path));
+  for (final f in files) {
+    final sw = Stopwatch()..start();
+    final r = await services.plantEyes.identify(f.path);
+    debugPrint(
+      '[PLANT] ${f.path.split('/').last} ${sw.elapsedMilliseconds}ms '
+      '${r.guesses.map((g) => '${g.id}:${g.score.toStringAsFixed(3)}').join(' ')} '
+      'conf=${r.confident}',
+    );
+  }
 }

@@ -2,6 +2,10 @@
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
 <dict>
+	<key>NSCameraUsageDescription</key>
+	<string>Чтобы фотографировать растения для гербария. Фото остаются на телефоне.</string>
+	<key>NSPhotoLibraryUsageDescription</key>
+	<string>Чтобы добавить в гербарий растение, которое ты уже сфотографировал(а).</string>
 	<key>NSMicrophoneUsageDescription</key>
 	<string>Чтобы разговаривать с персонажами по-испански. Запись не покидает телефон.</string>
 	<key>UIFileSharingEnabled</key>

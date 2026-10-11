@@ -34,12 +34,30 @@ Six places in the barrio, each with its own character:
 
 When the child gets stuck, 💡 shows a ready phrase with its Russian translation and can say it aloud. On the first mission, **Copo the Samoyed** walks new players through the goals, the microphone and the hints. If a child goes quiet, Copo nudges them and the 💡 button pulses. No hints gives ★★★, and stars unlock 21 stickers for an album.
 
+## Copo's Herbarium: go outside
+
+Built for the [Hacktoberfest Week 1 "Touch Grass" challenge](https://dev.to/challenges/hacktoberfest-week1-2026-10-05). Copo gives a daily quest ("find a ceibo"). The child photographs a plant, and the card tells them:
+
+- its name in Spanish (spoken in an Argentine voice) and in Russian
+- whether it's **from here** 🇦🇷 or **brought from far away** ✈️, and from where
+- one verified fact, how to recognize it, and a warning when it's poisonous or prickly
+
+The card then goes into a herbarium made of the child's own photos.
+
+**How identification works.** [BioCLIP 2.5 Mobile](https://huggingface.co/crazedcodernate/bioclip-2.5-mobile-fastvit) (24 MB, MIT) runs on the phone in about 50 ms. It maps the photo into BioCLIP's species space, and we compare it **only with the 52 plants that grow in Buenos Aires**.
+
+- **The model didn't know the local plants.** Its table didn't include the most Argentine trees (ceibo, palo borracho, tipa, ombú, lapacho, pindó). We computed them with the full BioCLIP 2.5 text tower ([`tools/embed_taxa.py`](tools/embed_taxa.py)), using the author's exact templates. Reproducing an existing row gives cosine 1.0.
+- **The place narrows the choice.** On 106 research-grade iNaturalist photos from Argentina, the first answer is right 31% of the time among 4,300 species, and 70% among the local 52.
+- **On the phone, through the Dart code:** the first answer is right 64% of the time, and the right plant is in the top three 81% of the time. When the best answer leads by at least 0.05, it's right 40 times out of 42. Below that, Copo shows three candidates with what to look for, and **the child compares and decides**.
+- **Gemma retells the verified facts** in Copo's voice, with only the facts it's given and never food or medicine. Facts and sources: [`assets/plants/SOURCES.md`](assets/plants/SOURCES.md).
+
 ## Everything runs on the phone
 
 | Job | Open model | Runtime | Size |
 |---|---|---|---|
 | Plays the characters, translates | [Gemma 4 E2B](https://huggingface.co/litert-community/gemma-4-E2B-it-litert-lm) (Apache 2.0) | [flutter_gemma](https://pub.dev/packages/flutter_gemma) on LiteRT-LM, GPU | 2.6 GB, downloaded on first launch |
 | Hears the child | [Whisper small](https://huggingface.co/csukuangfj/sherpa-onnx-whisper-small) int8 (MIT) | [sherpa-onnx](https://github.com/k2-fsa/sherpa-onnx) | 375 MB, downloaded on first launch |
+| Recognizes plants | [BioCLIP 2.5 Mobile](https://huggingface.co/crazedcodernate/bioclip-2.5-mobile-fastvit) (MIT), distilled from BioCLIP 2.5 | [flutter_onnxruntime](https://pub.dev/packages/flutter_onnxruntime) | 24 MB, bundled |
 | Speaks | Piper `es_AR-daniela-high`, `es_MX-ald-medium` | sherpa-onnx | bundled (Git LFS) |
 
 No account, no server, no API keys. After the first download it works offline, and nothing the child says leaves the device.
@@ -106,5 +124,7 @@ lib/
 - Gemma 4: Apache 2.0, Google. Whisper: MIT, OpenAI. sherpa-onnx: Apache 2.0.
 - Voice `es_AR-daniela-high`: trained by [larcanio](https://huggingface.co/larcanio/piper-voices) on [OpenSLR 61](https://www.openslr.org/61/), crowd-sourced Argentine Spanish (CC BY-SA 4.0).
 - Voice `es_MX-ald-medium`: [rmcpantoja](https://huggingface.co/datasets/rmcpantoja/Ald_Mexican_Spanish_speech_dataset) (Unlicense).
+- BioCLIP 2.5 Mobile by Nate Hamilton (MIT); BioCLIP 2.5 by Imageomics.
+- Plant facts: verified against Buenos Aires city sources, argentina.gob.ar and Wikipedia; see SOURCES.md.
 - Illustrations were generated for this project with an AI image tool.
 - Built with [Claude Code](https://claude.com/claude-code) as the coding agent.

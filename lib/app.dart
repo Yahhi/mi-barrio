@@ -5,6 +5,8 @@ import 'ai/brain.dart';
 import 'ai/engines.dart';
 import 'ai/model_files.dart';
 import 'ai/speech.dart';
+import 'explore/plant_eyes.dart';
+import 'explore/plants.dart';
 import 'game/progress.dart';
 
 /// Shared, long-lived objects. Filled in by the setup screen.
@@ -19,6 +21,8 @@ class Services {
   late Audio audio;
   late Ears ears;
   late Mouth mouth;
+  late PlantEyes plantEyes;
+  late PlantCatalog plants;
 }
 
 Services get services => Services.instance;

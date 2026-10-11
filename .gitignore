@@ -51,3 +51,4 @@ app.*.map.json
 # Claude Code personal settings
 .claude/settings.local.json
 docs/dev-post.md
+docs/dev-post-*.md

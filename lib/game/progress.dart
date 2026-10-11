@@ -11,13 +11,18 @@ class Player {
     Map<String, int>? stars,
     Set<String>? stickers,
     this.onboarded = false,
-  }) : stars = stars ?? {},
+    List<Find>? finds,
+  }) : finds = finds ?? [],
+       stars = stars ?? {},
        stickers = stickers ?? {};
 
   String name;
 
   /// Has seen Copo's walkthrough of the mission screen.
   bool onboarded;
+
+  /// Plants collected outside: newest first.
+  final List<Find> finds;
 
   /// Best stars per mission id (1..3).
   final Map<String, int> stars;
@@ -30,6 +35,7 @@ class Player {
     'stars': stars,
     'stickers': stickers.toList(),
     'onboarded': onboarded,
+    'finds': [for (final f in finds) f.toJson()],
   };
 
   factory Player.fromJson(Map<String, dynamic> j) => Player(
@@ -37,6 +43,33 @@ class Player {
     stars: (j['stars'] as Map).map((k, v) => MapEntry(k as String, v as int)),
     stickers: (j['stickers'] as List).cast<String>().toSet(),
     onboarded: j['onboarded'] as bool? ?? false,
+    finds: [
+      for (final f in (j['finds'] as List? ?? const []))
+        Find.fromJson(f as Map<String, dynamic>),
+    ],
+  );
+}
+
+/// A plant a child photographed and recognized, for the herbarium.
+class Find {
+  Find({required this.plantId, required this.photoPath, required this.date});
+
+  final String plantId;
+
+  /// File name inside the app's documents/herbarium folder.
+  final String photoPath;
+  final DateTime date;
+
+  Map<String, dynamic> toJson() => {
+    'plant': plantId,
+    'photo': photoPath,
+    'date': date.toIso8601String(),
+  };
+
+  factory Find.fromJson(Map<String, dynamic> j) => Find(
+    plantId: j['plant'] as String,
+    photoPath: j['photo'] as String,
+    date: DateTime.parse(j['date'] as String),
   );
 }
 
@@ -100,6 +133,11 @@ class Progress extends ChangeNotifier {
 
   Future<void> markOnboarded() async {
     active!.onboarded = true;
+    await _save();
+  }
+
+  Future<void> addFind(Find f) async {
+    active!.finds.insert(0, f);
     await _save();
   }
 

@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:path_provider/path_provider.dart';
 
 import '../ai/audio.dart';
 import '../ai/brain.dart';
@@ -7,6 +8,10 @@ import '../ai/model_files.dart';
 import '../ai/speech.dart';
 import '../app.dart';
 import '../debug/self_test.dart';
+import '../explore/explore_screen.dart';
+import '../explore/plant_card_screen.dart';
+import '../explore/plant_eyes.dart';
+import '../explore/plants.dart';
 import '../game/missions.dart';
 import 'album_screen.dart';
 import 'barrio_screen.dart';
@@ -74,7 +79,10 @@ class _SetupScreenState extends State<SetupScreen> {
       services.ears = WhisperEars(services.audio, services.speech);
       services.mouth = PiperMouth(services.audio, services.speech);
       services.brain = await Brain.load();
+      services.plants = await PlantCatalog.load();
+      services.plantEyes = await PlantEyes.load();
       if (const bool.fromEnvironment('SELFTEST')) await runSelfTest();
+      if (const bool.fromEnvironment('PLANT_TEST')) await runPlantTest();
 
       if (!mounted) return;
       // Debug: --dart-define=START=barrio|mission|album opens a screen directly.
@@ -96,6 +104,23 @@ class _SetupScreenState extends State<SetupScreen> {
           Navigator.of(context).push(
             MaterialPageRoute(builder: (_) => MissionScreen(mission: mission)),
           );
+        } else if (start.startsWith('card:')) {
+          // START=card:ceibo:photo.jpg (a file in Documents/plant_test)
+          final parts = start.split(':');
+          final docs = (await getApplicationDocumentsDirectory()).path;
+          if (!mounted) return;
+          Navigator.of(context).push(
+            MaterialPageRoute(
+              builder: (_) => PlantCardScreen(
+                plant: services.plants.byId(parts[1])!,
+                photoPath: '$docs/plant_test/${parts[2]}',
+                photoName: 'debug.jpg',
+              ),
+            ),
+          );
+        } else if (start == 'explore') {
+          Navigator.of(context)
+              .push(MaterialPageRoute(builder: (_) => const ExploreScreen()));
         } else if (start == 'album') {
           Navigator.of(context)
               .push(MaterialPageRoute(builder: (_) => const AlbumScreen()));

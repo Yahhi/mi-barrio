@@ -108,6 +108,44 @@ class Brain {
     }
   }
 
+  /// Copo retells a plant's verified facts as a tiny story for a child.
+  /// Only the given facts may be used: no new claims, never food or medicine.
+  Future<String> copoTells({
+    required String nameRu,
+    required String nameEs,
+    required String facts,
+  }) async {
+    final chat = await _model.openChat(
+      systemInstruction:
+          'You are Copo, a cheerful Samoyed puppy who explores Buenos Aires with a 9-10-year-old child. '
+          'Write in simple, natural Russian: exactly 2 short sentences, at most 40 words. '
+          'Sentence 1: retell the most surprising of the given facts in your own playful words. '
+          'Sentence 2: invite the child to notice or check one thing on the real plant (leaves, flowers, bark, trunk). '
+          'No greeting, no "привет", do not call the plant beautiful. '
+          'Use ONLY the given facts; do not add any other facts, numbers or names. '
+          'Never say a plant can be eaten, tasted, or used as medicine. Address the child as "ты".',
+      temperature: 0.6,
+      topK: 40,
+      maxOutputTokens: 120,
+      modelType: ModelType.gemma4,
+    );
+    try {
+      await chat.addQueryChunk(
+        Message.text(
+          text: 'Plant: $nameRu ($nameEs). Facts: $facts',
+          isUser: true,
+        ),
+      );
+      final buf = StringBuffer();
+      await for (final r in chat.generateChatResponseAsync()) {
+        if (r is TextResponse) buf.write(r.token);
+      }
+      return cleanForSpeech(buf.toString());
+    } finally {
+      await chat.close();
+    }
+  }
+
   Future<void> endScene() async {
     await _scene?.close();
     _scene = null;
